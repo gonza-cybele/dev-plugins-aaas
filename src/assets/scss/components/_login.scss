@@ -1,0 +1,792 @@
+// Not defined elsewhere in codebase but used on legacy login
+:root,
+body {
+  --border-color-2: #c0c0c0;
+  --border-color-3: #545454;
+  --auth-button-inactive: #c0c0c0;
+  --progress-bar: #cc0000;
+  --base-font-size: 16px;
+  --inactive-input-color: #666666;
+  --legal: var(--inactive-input-color);
+  --border-hover-default: #ced4da; // replicates defaults;
+  --generic-oauth-bg-color: #007dc1;
+  --google-bg-color: #ec412c;
+  --facebook-bg-color: #3765c9;
+  --saml-bg-color: #c1272d;
+  --linkedin-bg-color: #0077b5;
+  --dropbox-bg-color: #0062ff;
+  --azure-bg-color: #0089d6;
+  --forgerock-bg-color: #f96700;
+  --okta-bg-color: #00297a;
+
+  // NEW LOGO VARIABLES SECTION LEFT
+  --login-brand-bg: radial-gradient(50% 50% at 50% 50%, var(--thinfinity-400) 0%, var(--cybele-400) 80%);
+  --login-brand-bg-blend-mode: var(--bg-blend-mode);
+  --login-brand-bg-position-x: center;
+  --login-brand-bg-position-y: center;
+  --login-brand-bg-repeat: no-repeat;
+  --login-brand-bg-size: var(--bg-size);
+
+  // NEW LOGO VARIABLES SECTION RIGHT
+  --login-form-bg: var(--secondary-bgcolor);
+  --login-form-bg-blend-mode: var(--bg-blend-mode);
+  --login-form-bg-position-x: center;
+  --login-form-bg-position-y: center;
+  --login-form-bg-repeat: repeat;
+  --login-form-bg-size: var(--bg-size);
+}
+
+/* BACKGROUND, FOOTER & CONTAINER (Login page) ****************/
+.background {
+  position: absolute;
+  z-index: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary-color);
+}
+
+/**************************************************************
+ *? styles isolated for: LoginPage.vue - <LoginPage />
+ ***************************************************************/
+.login {
+  &__page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-bgcolor);
+    font-size: var(--base-font-size);
+
+    & > section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      width: 50vw;
+      height: 100vh;
+
+      @include respond-to('tablet-v') {
+        width: 100vw;
+      }
+    }
+
+    & #login_brand {
+      display: flex;
+      background: var(--login-brand-bg);
+      background-blend-mode: var(--login-brand-bg-blend-mode);
+      background-size: var(--login-brand-bg-size);
+      background-position-x: var(--login-brand-bg-position-x);
+      background-position-y: var(--login-brand-bg-position-y);
+      background-repeat: var(--login-brand-bg-repeat);
+      vertical-align: middle;
+      max-width: 50vw;
+
+      #animatedLogo__container {
+        max-width: 600px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .logo-img {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-image: var(--login-logo);
+          background-size: var(--logo-bg-size-mode);
+          min-width: 350px !important;
+          display: block;
+          height: 300px !important;
+          width: 100% !important;
+          max-width: 450px;
+        }
+      }
+
+      @include respond-to('tablet-v') {
+        display: none;
+      }
+    }
+
+    & #login_separator {
+      display: flex;
+      flex-direction: column;
+      max-width: 20px;
+      padding: 0;
+      background-color: var(--secondary-bgcolor, #fff);
+
+      @include respond-to('tablet-v') {
+        display: none;
+      }
+
+      & > .separator {
+        width: 100%;
+        max-width: 20px;
+        height: 50vh;
+        padding: 5px;
+        background-color: var(--secondary-bgcolor, #fff);
+      }
+
+      & > .separator-top {
+        clip-path: polygon(0 0, 100% 0%, 0 100%, 0% 100%);
+        background-color: var(--primary-color-200);
+      }
+
+      & > .separator-bottom {
+        clip-path: polygon(0 0, 0 0, 100% 100%, 0 100%);
+        height: 60vh;
+        background-color: var(--primary-color-400);
+      }
+    }
+
+    & #login_form {
+      background: var(--login-form-bg);
+      background-blend-mode: var(--login-form-bg-blend-mode);
+      background-size: var(--login-form-bg-size);
+      background-position-x: var(--login-form-bg-position-x);
+      background-position-y: var(--login-form-bg-position-y);
+      background-repeat: var(--login-form-bg-repeat);
+      justify-content: initial;
+      max-width: 100vw;
+      overflow-x: hidden;
+      // overflow-y: auto;
+
+      @media (max-height: 600px) {
+        justify-content: initial;
+        padding-block: 3rem;
+      }
+    }
+  }
+}
+
+/**************************************************************
+ *? styles isolated for: LoginContainer.vue - <LoginContainer />
+ ***************************************************************/
+#login-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 550px;
+  border-radius: 5px;
+  align-items: center;
+
+  @include respond-to('mobile') {
+    width: 100%;
+  }
+
+  & > main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    padding: 1rem 2rem;
+
+    @media (max-height: 600px) {
+      justify-content: initial;
+      padding: 0;
+    }
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: auto;
+  }
+
+  .login-title,
+  h2 {
+    text-align: center;
+    line-height: 110%;
+    font-size: clamp(25px, 2vw, 35px);
+  }
+
+  @media (max-width: 500px) {
+    border: none;
+    justify-content: start;
+  }
+}
+
+/***********************************************************
+ *? styles isolated for: LoginHeader.vue - <LoginHeader />
+ ************************************************************/
+#login-header {
+  display: none;
+
+  @include respond-to('tablet-v') {
+    display: block;
+    margin-bottom: 3vh;
+
+    .logo {
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  .logo-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: var(--login-logo);
+    background-size: var(--logo-bg-size-mode);
+    // min-width: 350px !important;
+    // display: block;
+    // height: 300px !important;
+    width: 100% !important;
+  }
+}
+
+#animated-logo {
+  width: 25vw;
+  min-width: 400px;
+
+  svg * {
+    fill: rgb(255, 254, 254);
+    display: block;
+  }
+}
+
+/********************************************************
+ * These styles affect: LoginMain.vue and LoginChangePass
+ * ? <LoginMainFlow />
+ * ? <ChangePassword />
+ ********************************************************/
+#login_main,
+#login_changePassword,
+#radiusChallenge {
+  min-height: 300px;
+  form {
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+  }
+  & > div.textHead {
+    color: var(--primary-txtcolor);
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .p-button {
+    width: 50%;
+    padding-block: 1.5rem;
+  }
+
+  @media (max-width: 1124px) {
+    .p-button {
+      width: 47%;
+    }
+  }
+
+  .separator {
+    background: var(--secondary-bgcolor);
+    color: var(--border-color-2);
+
+    &__text {
+      position: absolute;
+      left: 50%;
+      padding: 0 10pt;
+      background: var(--secondary-bgcolor);
+    }
+  }
+
+  .spinner {
+    background-color: var(--secondary-bgcolor);
+  }
+
+  .prompt {
+    color: var(--primary-txtcolor);
+  }
+
+  .inputPrompt {
+    color: var(--primary-color);
+  }
+
+  // Generic inputs
+  input.p-inputtext {
+    background: var(--input-bgcolor);
+    border-color: var(--border-color);
+    font-size: inherit;
+    color: var(--input-txtcolor);
+
+    &:focus {
+      border-color: var(--border-color);
+    }
+
+    &:hover {
+      border-color: var(--border-hover-default);
+    }
+  }
+
+  .p-inputwrapper {
+    background: var(--input-bgcolor);
+  }
+
+  // Password
+  input.p-inputtext.p-component.p-password-input {
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-color: var(--border-color);
+    width: 100%;
+    font-size: inherit;
+  }
+
+  .p-password.p-component.p-inputwrapper.p-input-icon-right {
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 4px; // replicates defaults;
+  }
+
+  .p-password.p-component.p-inputwrapper {
+    &:has(> input.p-inputtext.p-component.p-password-input:focus) {
+      box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); // replicates defaults;
+    }
+
+    &:has(> input.p-inputtext.p-component.p-password-input:hover) {
+      border-color: var(--border-hover-default);
+    }
+  }
+
+  // Dropdown
+  span.p-dropdown-label.p-inputtext {
+    font-size: inherit;
+    color: var(--input-txtcolor);
+  }
+
+  .p-dropdown:not(.p-disabled).p-focus {
+    border-color: var(--border-color);
+  }
+
+  .go-back-radius {
+    position: absolute;
+    top: -40px;
+  }
+
+  i.icon {
+    font-size: var(--icon-size);
+  }
+
+  .initials {
+    display: none;
+
+    &.initials-show {
+      display: block;
+    }
+  }
+
+  .auth-circle {
+    width: var(--auth-circle-size);
+    height: var(--auth-circle-size);
+  }
+
+  .sso-buttons {
+    button {
+      background-color: transparent;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      border: 1px solid var(--border-color);
+      span {
+        font-weight: bold;
+      }
+      .method-google {
+        color: var(--google-bg-color);
+      }
+
+      .method-facebook {
+        color: var(--facebook-bg-color);
+      }
+
+      .method-saml {
+        color: var(--saml-bg-color);
+      }
+
+      .method-linkedin {
+        color: var(--linkedin-bg-color);
+      }
+
+      .method-dropbox {
+        color: var(--dropbox-bg-color);
+      }
+
+      .method-azure {
+        color: var(--azure-bg-color);
+      }
+
+      .method-forgerock {
+        color: var(--forgerock-bg-color);
+      }
+
+      .method-okta {
+        color: var(--okta-bg-color);
+      }
+
+      &:hover {
+        background-color: var(--primary-color);
+        color: var(--secondary-bgcolor);
+        &:has(.method-google) {
+          background-color: var(--google-bg-color);
+
+          .method-google {
+            color: var(--secondary-bgcolor);
+          }
+        }
+
+        &:has(.method-facebook) {
+          background-color: var(--facebook-bg-color);
+
+          .method-facebook {
+            color: var(--secondary-bgcolor);
+          }
+        }
+
+        &:has(.method-saml) {
+          background-color: var(--saml-bg-color);
+
+          .method-saml {
+            color: var(--secondary-bgcolor);
+          }
+        }
+
+        &:has(.method-linkedin) {
+          background-color: var(--linkedin-bg-color);
+
+          .method-linkedin {
+            color: var(--secondary-bgcolor);
+          }
+        }
+
+        &:has(.method-dropbox) {
+          background-color: var(--dropbox-bg-color);
+
+          .method-dropbox {
+            color: var(--secondary-bgcolor);
+          }
+        }
+
+        &:has(.method-azure) {
+          background-color: var(--azure-bg-color);
+
+          .method-azure {
+            color: var(--secondary-bgcolor);
+          }
+        }
+
+        &:has(.method-forgerock) {
+          background-color: var(--forgerock-bg-color);
+
+          .method-forgerock {
+            color: var(--secondary-bgcolor);
+          }
+        }
+
+        &:has(.method-okta) {
+          background-color: var(--okta-bg-color);
+
+          .method-okta {
+            color: var(--secondary-bgcolor);
+          }
+        }
+      }
+    }
+
+    .sso-button-large {
+      text-transform: none;
+      color: var(--primary-color);
+      font-weight: bold;
+      max-width: 15rem;
+
+      &:has(.method-google) {
+        border: 2px solid var(--google-bg-color);
+        background-color: var(--google-bg-color);
+        color: var(--special-button);
+
+        .method-google {
+          color: var(--special-button);
+        }
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid var(--google-bg-color);
+          color: var(--google-bg-color);
+
+          .method-google {
+            color: var(--google-bg-color);
+          }
+        }
+      }
+
+      &:has(.method-azure) {
+        border: 2px solid var(--azure-bg-color);
+        background-color: var(--azure-bg-color);
+        color: var(--special-button);
+
+        .method-azure {
+          color: var(--special-button);
+        }
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid var(--azure-bg-color);
+          color: var(--azure-bg-color);
+
+          .method-azure {
+            color: var(--azure-bg-color);
+          }
+        }
+      }
+
+      &:has(.method-dropbox) {
+        border: 2px solid var(--dropbox-bg-color);
+        background-color: var(--dropbox-bg-color);
+        color: var(--special-button);
+
+        .method-dropbox {
+          color: var(--special-button);
+        }
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid var(--dropbox-bg-color);
+          color: var(--dropbox-bg-color);
+
+          .method-dropbox {
+            color: var(--dropbox-bg-color);
+          }
+        }
+      }
+
+      &:has(.method-linkedin) {
+        border: 2px solid var(--linkedin-bg-color);
+        background-color: var(--linkedin-bg-color);
+        color: var(--special-button);
+
+        .method-linkedin {
+          color: var(--special-button);
+        }
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid var(--linkedin-bg-color);
+          color: var(--linkedin-bg-color);
+
+          .method-linkedin {
+            color: var(--linkedin-bg-color);
+          }
+        }
+      }
+
+      &:has(.method-saml) {
+        border: 2px solid var(--saml-bg-color);
+        background-color: var(--saml-bg-color);
+        color: var(--special-button);
+
+        .method-saml {
+          color: var(--special-button);
+        }
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid var(--saml-bg-color);
+          color: var(--saml-bg-color);
+
+          .method-saml {
+            color: var(--saml-bg-color);
+          }
+        }
+      }
+
+      &:has(.method-facebook) {
+        border: 2px solid var(--facebook-bg-color);
+        background-color: var(--facebook-bg-color);
+        color: var(--special-button);
+
+        .method-facebook {
+          color: var(--special-button);
+        }
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid var(--facebook-bg-color);
+          color: var(--facebook-bg-color);
+
+          .method-facebook {
+            color: var(--facebook-bg-color);
+          }
+        }
+      }
+      &:has(.method-okta) {
+        border: 2px solid var(--okta-bg-color);
+        background-color: var(--okta-bg-color);
+        color: var(--special-button);
+
+        .method-okta {
+          color: var(--special-button);
+        }
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid var(--okta-bg-color);
+          color: var(--okta-bg-color);
+
+          .method-okta {
+            color: var(--okta-bg-color);
+          }
+        }
+      }
+      &:has(.method-forgerock) {
+        border: 2px solid var(--forgerock-bg-color);
+        background-color: var(--forgerock-bg-color);
+        color: var(--special-button);
+
+        .method-forgerock {
+          color: var(--special-button);
+        }
+
+        &:hover {
+          background-color: transparent;
+          border: 2px solid var(--forgerock-bg-color);
+          color: var(--forgerock-bg-color);
+
+          .method-forgerock {
+            color: var(--forgerock-bg-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*******************************************************
+ * These styles affect: TFAChange.vue and TFAMain.vue
+ * ? <TFAMaine />
+ * ? <TFAChange />
+ *******************************************************/
+#tfa-main,
+#tfa-changePag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary-txtcolor);
+  //min-height: 625px;
+  padding: 2%;
+
+  & > section > div.issuer {
+    width: 100%;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--primary-color);
+    text-align: center;
+  }
+
+  .controls {
+    min-width: 162px;
+
+    &:disabled {
+      pointer-events: none;
+    }
+  }
+
+  .p-button {
+    width: 60%;
+    padding-block: 1.2rem;
+  }
+
+  @media (max-width: 1124px) {
+    .p-button {
+      width: 47%;
+    }
+  }
+
+  input,
+  button {
+    &:disabled {
+      pointer-events: none;
+    }
+  }
+
+  .codeInputContainer {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .progressBar {
+      margin-top: 0.5rem;
+      height: 5px;
+      background-color: var(--progress-bar);
+    }
+
+    &:has(input:disabled) {
+      cursor: not-allowed;
+    }
+  }
+
+  .message {
+    min-width: 380px;
+
+    @media (max-width: 380px) {
+      max-width: 100vw;
+    }
+  }
+
+  .prompt,
+  .error,
+  .issuer {
+    text-wrap: nowrap;
+  }
+
+  .imageContainer {
+    max-width: var(--totp-image-size);
+
+    img {
+      width: 90%;
+    }
+  }
+
+  .recoveryinput {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    border: dashed var(--border-hover-default) 1px !important;
+  }
+}
+
+/* TRANSITIONS ****************************************/
+.v-enter-active {
+  transition: opacity 1s ease;
+}
+
+.v-enter-from {
+  opacity: 0;
+}
+
+.v-leave-active {
+  opacity: 0;
+}
+
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-enter-from {
+  opacity: 0;
+}
+
+.v-enter-active {
+  transition: opacity 1s ease;
+}
+
+/**********************************************
+ * <LogoAnimated />
+**********************************************/
+#animated-logo svg * {
+  fill: rgb(255, 254, 254);
+  display: block;
+}

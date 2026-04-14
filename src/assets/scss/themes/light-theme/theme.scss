@@ -1,0 +1,148 @@
+body,
+.light-mode {
+  --icon-fontsize: 17px;
+  --font-size-xl: 18px;
+  --font-size-lg: 16px;
+  --font-size-md: 14px;
+  --font-size: 12px;
+  --font-size-sm: 10px;
+
+  --font-family: 'Inter';
+  --primary-color: var(--thinfinity-500);
+  --primary-color-400: var(--thinfinity-400);
+  --primary-color-300: var(--thinfinity-300);
+  --primary-color-200: var(--thinfinity-200);
+  --primary-color-100: var(--thinfinity-100);
+  --dark-primary-color: var(--thinfinity-700);
+  --light-primary-color: var(--op-thinfinity-50);
+  --secondary-color: var(--light-green-400);
+  --tertiary-color: var(--op-orange-400);
+
+  --primary-bgcolor: var(--gray-100);
+  --secondary-bgcolor: var(--white-500);
+  --tertiary-bgcolor: var(--gray-50);
+  --hover-bgcolor: var(--gray-50);
+  --hover2-bgcolor: var(--op-gray-100);
+  --header-bgcolor: var(--primary-color);
+  --toolbar-bgcolor: var(--tertiary-bgcolor);
+  --transaction-toolbar: var(--light-blue-100);
+  --sidepanel-header-bgcolor: var(--header-bgcolor);
+  --sidepanel-bgcolor: var(--secondary-bgcolor);
+  --menu-bgcolor: var(--secondary-bgcolor);
+  --dialog-bgcolor: var(--secondary-bgcolor);
+  --submenu-bgcolor: var(--tertiary-bgcolor);
+  --light-mode-entity-bg: #5db3e216;
+  --unread-notification: var(--op-light-blue-50);
+
+  --bg-image: none;
+  --bg-size: contain;
+  --bg-blend-mode: none;
+  --header-bg-image: none;
+
+  --button-bgcolor: var(--primary-color);
+  --button-txtcolor: var(--white-500);
+  --button-bgcolor-h: var(--dark-primary-color);
+  --button-txtcolor-h: var(--white-500);
+  --outline-button-color: var(--button-bgcolor);
+  --outline-button-bgcolor-h: var(--button-bgcolor-h);
+  --outline-button-color-h: var(--button-txtcolor-h);
+  --special-button: var(--white-500);
+  --topbar-button-bgcolor: transparent;
+  --topbar-button-color: var(--white-500);
+
+  /*new switcher variables*/
+  --switcher-button: var(--new-grey-300);
+  --switcher-button-bgcolor: var(--new-green-400);
+  --switcher-button-bgcolor-h: var(--new-grey-400);
+  --switcher-button-h: var(--new-green-500);
+  --switcher-button-before: var(--white-500);
+
+  /*New heading colors*/
+  --h2-color: var(--heading-color);
+  --h3-color: var(--heading-color);
+  --h4-color: var(--heading-color);
+
+  --primary-txtcolor: var(--gray-600);
+  --secondary-txtcolor: var(--gray-300);
+  --tertiary-txtcolor: var(--gray-400);
+  --toolbar-txtcolor: var(--primary-txtcolor);
+  --heading-color: var(--dark-primary-color);
+
+  --link-color: var(--primary-color);
+  --link-color-h: var(--op-thinfinity-300);
+  --menu-selected-color: var(--dark-primary-color);
+  --menu-selected-bgcolor: var(--op-dark-blue-50);
+  --submenu-selected-bgcolor: var(--op-dark-blue-100);
+
+  --input-bgcolor: var(--white-500);
+  --header-input-bgcolor: var(--secondary-bgcolor);
+  --input-txtcolor: var(--gray-600);
+  --inputpanel-bgcolor: var(--secondary-bgcolor);
+
+  --border-color: var(--gray-300);
+  --light-border-color: var(--gray-200);
+  --lighten-border-color: var(--gray-100);
+  --separator: var(--op-gray-300);
+
+  --request-denied: var(--red-500);
+  --request-approved: var(--op-light-green-300);
+  --request-pending: var(--orange-500);
+  --request-expired: var(--gray-300);
+  --request-approvedincoming: var(--op-orange-300);
+
+  --table-header-bgcolor: var(--hover-bgcolor);
+  --table-body-bgcolor: var(--secondary-bgcolor);
+  --table-body-bgcolor-h: var(--tertiary-bgcolor);
+
+  --disabled: var(--gray-300);
+  --danger: var(--red-400);
+  --alert: var(--orange-500);
+  --alert-light: var(--orange-400);
+  --allowed: var(--light-green-400);
+  --shadow-color: #00000019;
+  --starred: var(--op-orange-300);
+  --prod: var(--light-green-300);
+  --stage: var(--yellow-400);
+  --test: var(--orange-400);
+
+  --profile-img: url('@public/avatar.png');
+
+  --footer-display: block;
+
+  // Login
+  --logo-bg-size-mode: contain;
+  --totp-image-size: 270px;
+  --header-height: 57px;
+  --login-box-width: 80%;
+  --icon-size: 1.3rem;
+  --auth-circle-size: 45px;
+
+  //Analytics
+  --light-mode-sessions-color: var(--secondary-color);
+  --light-mode-connections-color: var(--primary-color);
+  --light-mode-border-color: var(--white-500);
+  --light-mode-text-color: var(--gray-600);
+  --light-mode-grid-color: var(--gray-100);
+  --graf-bgcolor: var(--secondary-bgcolor);
+
+  //Bootstrap - light blue theme
+  --text-color: var(--primary-txtcolor);
+  --text-secondary-color: var(--secondary-txtcolor);
+  --primary-color-text: var(--primary-txtcolor);
+  --border-radius: 0.5rem;
+
+  --label-transaction-background: var(--yellow-50);
+  --label-transaction-border: var(--orange-100);
+
+  .top-bar {
+    border-bottom: 1px solid transparent;
+  }
+
+  .side-menu {
+    border-right: 1px solid transparent;
+  }
+
+  /*#app .app-container main:last-child {
+    border-top: 1px solid transparent;
+  }*/
+}

@@ -1,0 +1,415 @@
+@font-face {
+  font-family: cybele-icons;
+  src: url('../font/cybele-icons.eot?93456053');
+  src: url('../font/cybele-icons.eot?93456053#iefix') format('embedded-opentype'),
+    url('../font/cybele-icons.woff2?93456053') format('woff2'), url('../font/cybele-icons.woff?93456053') format('woff'),
+    url('../font/cybele-icons.ttf?93456053') format('truetype'),
+    url('../font/cybele-icons.svg?93456053#cybele-icons') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+[class*=' cyb-']:before,
+[class^='cyb-']:before {
+  font-family: cybele-icons;
+  font-style: normal;
+  font-weight: 400;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.cyb-arrow-right:before {
+  content: '\e800';
+}
+.cyb-arrow-up:before {
+  content: '\e801';
+}
+.cyb-arrow-down:before {
+  content: '\e802';
+}
+.cyb-thinfinity:before {
+  content: '\e803';
+}
+.cyb-arrow-left:before {
+  content: '\e804';
+}
+.cyb-expand:before {
+  content: '\e805';
+}
+.cyb-resize:before {
+  content: '\e806';
+}
+.cyb-full-screen:before {
+  content: '\e807';
+}
+.cyb-desktop-filled:before {
+  content: '\e808';
+}
+.cyb-desktop:before {
+  content: '\e809';
+}
+.cyb-exit-full-screen:before {
+  content: '\e80a';
+}
+.cyb-home-filled:before {
+  content: '\e80b';
+}
+.cyb-home:before {
+  content: '\e80c';
+}
+.cyb-rollback:before {
+  content: '\e80d';
+}
+.cyb-refresh:before {
+  content: '\e80e';
+}
+.cyb-options:before {
+  content: '\e80f';
+}
+.cyb-recurrent:before {
+  content: '\e810';
+}
+.cyb-web-folder-filled:before {
+  content: '\e811';
+}
+.cyb-edit:before {
+  content: '\e812';
+}
+.cyb-angle-left:before {
+  content: '\e813';
+}
+.cyb-angle-up:before {
+  content: '\e814';
+}
+.cyb-angle-double-right:before {
+  content: '\e815';
+}
+.cyb-angle-double-left:before {
+  content: '\e816';
+}
+.cyb-scale:before {
+  content: '\e817';
+}
+.cyb-newwindow:before {
+  content: '\e818';
+}
+.cyb-cross:before {
+  content: '\e819';
+}
+.cyb-rounded-plus:before {
+  content: '\e81a';
+}
+.cyb-angle-down:before {
+  content: '\e81b';
+}
+.cyb-angle-right:before {
+  content: '\e81c';
+}
+.cyb-link:before {
+  content: '\e81d';
+}
+.cyb-clock:before {
+  content: '\e81e';
+}
+.cyb-forbidden:before {
+  content: '\e81f';
+}
+.cyb-eye:before {
+  content: '\e820';
+}
+.cyb-virtualuiapp:before {
+  content: '\e821';
+}
+.cyb-eye-off:before {
+  content: '\e822';
+}
+.cyb-user:before {
+  content: '\e823';
+}
+.cyb-cloud-instances:before {
+  content: '\e824';
+}
+.cyb-model:before {
+  content: '\e825';
+}
+.cyb-template:before {
+  content: '\e826';
+}
+.cyb-unplugged:before {
+  content: '\e827';
+}
+.cyb-authenticated-cloud:before {
+  content: '\e828';
+}
+.cyb-recording:before {
+  content: '\e829';
+}
+.cyb-my-calendar:before {
+  content: '\e82a';
+}
+.cyb-bell:before {
+  content: '\e82b';
+}
+.cyb-recording-filled:before {
+  content: '\e82c';
+}
+.cyb-trash:before {
+  content: '\e82d';
+}
+.cyb-terminal:before {
+  content: '\e82e';
+}
+.cyb-terminal-filled:before {
+  content: '\e82f';
+}
+.cyb-search:before {
+  content: '\e830';
+}
+.cyb-gear:before {
+  content: '\e831';
+}
+.cyb-printer:before {
+  content: '\e832';
+}
+.cyb-save:before {
+  content: '\e833';
+}
+.cyb-members-filled:before {
+  content: '\e834';
+}
+.cyb-visa:before {
+  content: '\e835';
+}
+.cyb-amex:before {
+  content: '\e836';
+}
+.cyb-dropbox:before {
+  content: '\e837';
+}
+.cyb-linkedin:before {
+  content: '\e838';
+}
+.cyb-azure:before {
+  content: '\e839';
+}
+.cyb-dll:before {
+  content: '\e83a';
+}
+.cyb-duo:before {
+  content: '\e83b';
+}
+.cyb-members:before {
+  content: '\e83c';
+}
+.cyb-generic-card:before {
+  content: '\e83d';
+}
+.cyb-facebook:before {
+  content: '\e83e';
+}
+.cyb-master:before {
+  content: '\e83f';
+}
+.cyb-hamburger:before {
+  content: '\e840';
+}
+.cyb-bell-off:before {
+  content: '\e841';
+}
+.cyb-profile-settings:before {
+  content: '\e842';
+}
+.cyb-web-folder:before {
+  content: '\e843';
+}
+.cyb-h-ellipsis:before {
+  content: '\e844';
+}
+.cyb-cloud-gcp:before {
+  content: '\e845';
+}
+.cyb-oracle-cloud:before {
+  content: '\e846';
+}
+.cyb-hyper-v:before {
+  content: '\e847';
+}
+.cyb-vmware-vsphere:before {
+  content: '\e848';
+}
+.cyb-proxmox:before {
+  content: '\e849';
+}
+.cyb-generic-desktop:before {
+  content: '\e854';
+}
+.cyb-windows-desktop:before {
+  content: '\e855';
+}
+.cyb-screen-sharing:before {
+  content: '\e856';
+}
+.cyb-remoteapp4:before {
+  content: '\e857';
+}
+.cyb-h-ellipsis-vertical:before {
+  content: '\e85a';
+}
+.cyb-cybele:before {
+  content: '\e86b';
+}
+.cyb-cybele-filled:before {
+  content: '\e86c';
+}
+.cyb-thinvnc-conn:before {
+  content: '\e86d';
+}
+.cyb-thinfinity-1:before {
+  content: '\e86e';
+}
+.cyb-all-profiles:before {
+  content: '\e86f';
+}
+.cyb-all-profiles-filled:before {
+  content: '\e870';
+}
+.cyb-c-list:before {
+  content: '\e871';
+}
+.cyb-c-list-filled:before {
+  content: '\e872';
+}
+.cyb-tiles:before {
+  content: '\e873';
+}
+.cyb-tiles-filled:before {
+  content: '\e874';
+}
+.cyb-list:before {
+  content: '\e875';
+}
+.cyb-list-filled:before {
+  content: '\e876';
+}
+.cyb-new-app:before {
+  content: '\e877';
+}
+.cyb-new-app-filled:before {
+  content: '\e878';
+}
+.cyb-analytics:before {
+  content: '\e879';
+}
+.cyb-analytics-filled:before {
+  content: '\e87a';
+}
+.cyb-inspector:before {
+  content: '\e87b';
+}
+.cyb-inspector-filled:before {
+  content: '\e87c';
+}
+.cyb-broker-monitor:before {
+  content: '\e87d';
+}
+.cyb-broker-monitor-filled:before {
+  content: '\e87e';
+}
+.cyb-recordings:before {
+  content: '\e87f';
+}
+.cyb-recordings-filled:before {
+  content: '\e880';
+}
+.cyb-vdi:before {
+  content: '\e881';
+}
+.cyb-vdi-filled:before {
+  content: '\e882';
+}
+.cyb-calendar:before {
+  content: '\e885';
+}
+.cyb-calendar-filled:before {
+  content: '\e886';
+}
+.cyb-star:before {
+  content: '\e887';
+}
+.cyb-star-filled:before {
+  content: '\e888';
+}
+.cyb-microphone:before {
+  content: '\e889';
+}
+.cyb-pin:before {
+  content: '\e88a';
+}
+.cyb-new-home:before {
+  content: '\e88b';
+}
+.cyb-new-home-filled:before {
+  content: '\e88c';
+}
+.cyb-label:before {
+  content: '\e88d';
+}
+.cyb-label-filled:before {
+  content: '\e88e';
+}
+.cyb-apps:before {
+  content: '\e88f';
+}
+.cyb-apps-filled:before {
+  content: '\e890';
+}
+.cyb-cloud-download:before {
+  content: '\e891';
+}
+.cyb-cloud-upload:before {
+  content: '\e892';
+}
+.cyb-download:before {
+  content: '\e893';
+}
+.cyb-upload:before {
+  content: '\e894';
+}
+.cyb-globe:before {
+  content: '\e895';
+}
+.cyb-globe-filled:before {
+  content: '\e896';
+}
+.cyb-cloud-ionos:before {
+  content: '\e8df';
+}
+.cyb-cloud-azure:before {
+  content: '\e8e1';
+}
+.cyb-cloud-aws:before {
+  content: '\e8e2';
+}
+.cyb-gear-filled:before {
+  content: '\e8e9';
+}
+.cyb-reports-filled:before {
+  content: '\e94f';
+}
+.cyb-reports:before {
+  content: '\e950';
+}
+.cyb-reports-2:before {
+  content: '\e951';
+}
+.cyb-reports-2-filled:before {
+  content: '\e952';
+}

@@ -1,0 +1,27 @@
+i.append-input-icon-right {
+  right: 0.5rem;
+  cursor: pointer;
+  margin-top: -0.5rem;
+}
+.p-inputtext.p-invalid.p-component {
+  border-color: var(--danger);
+}
+.p-button.p-button-icon-only.button-clearsearch {
+  border: 1px solid var(--border-color);
+  border-left: 0;
+  margin-left: -0.2rem;
+  padding-left: 0.8rem;
+  padding-right: 0.6rem;
+  width: auto;
+  background-color: transparent !important;
+  color: var(--primary-txtcolor);
+  &:hover {
+    border: 1px solid var(--border-color);
+    border-left: 0;
+    color: var(--button-bgcolor-h);
+  }
+}
+
+.p-inputgroup-addon.configIcon {
+  background-color: var(--input-bgcolor);
+}

@@ -1,0 +1,9 @@
+.desc-list {
+  padding: 0;
+  li {
+    padding: 1rem 2rem;
+    border: 0;
+    border-bottom: 1px solid var(--light-border-color);
+    word-wrap: break-word;
+  }
+}

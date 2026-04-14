@@ -1,0 +1,19 @@
+ 
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 180 180" fill="#e8e8e8" >
+  <defs>
+    <linearGradient id="linear-gradient" x1="248.6262" y1="-159.3766" x2="366.3972" y2="-266.5129" gradientTransform="translate(-216 -124) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#48ccfc"/>
+      <stop offset="1" stop-color="#037bd5"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="272.9832" y1="-132.6019" x2="390.7542" y2="-239.7382" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient2" x1="221.8492" y1="-188.8116" x2="339.6202" y2="-295.9479" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient3" x1="246.2062" y1="-162.0368" x2="363.9772" y2="-269.1731" xlink:href="#linear-gradient"/>
+  </defs>
+  <path fill="inherit" d="M0,13.0002C0,5.8204,5.8203.0001,13,.0001h154c7.18,0,13,5.8203,13,13v153.9997c0,7.18-5.82,13-13,13H13c-7.1797,0-13-5.82-13-13V13.0002Z"/>
+  <g>
+    <path style="fill: #00ABF0"  d="M87.3405,38.8674h-48.4714v48.4713h48.4714v-48.4713Z"/>
+    <path style="fill: #00ABF0"  d="M141.13,38.8674h-48.4715v48.4713h48.4715v-48.4713Z"/>
+    <path style="fill: #00ABF0"  d="M87.3405,92.6611h-48.4714v48.4718h48.4714v-48.4718Z"/>
+    <path style="fill: #00ABF0" d="M141.13,92.6611h-48.4715v48.4718h48.4715v-48.4718Z"/>
+  </g>
+</svg>

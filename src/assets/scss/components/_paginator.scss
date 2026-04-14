@@ -1,0 +1,87 @@
+.standalon-paginator,
+.p-datatable {
+  .p-paginator {
+    background: var(--secondary-bgcolor);
+
+    &-bottom {
+      border-top-color: var(--border-color);
+    }
+
+    .p-paginator-current {
+      background-color: var(--primary-bgcolor);
+      border: none;
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      color: var(--primary-txtcolor);
+    }
+
+    .p-paginator-first,
+    .p-paginator-prev,
+    .p-paginator-next,
+    .p-paginator-last {
+      background-color: var(--primary-bgcolor);
+      border: none;
+      color: var(--button-txtcolor-h);
+    }
+
+    .p-paginator-first {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      color: var(--primary-txtcolor);
+
+      &:not(.p-disabled):not(.p-highlight):hover {
+        background-color: var(--tertiary-bgcolor);
+        color: var(--menu-selected-color);
+      }
+    }
+
+    .p-paginator-last {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+      color: var(--primary-txtcolor);
+
+      &:not(.p-disabled):not(.p-highlight):hover {
+        background-color: var(--tertiary-bgcolor);
+        color: var(--menu-selected-color);
+      }
+    }
+
+    .p-paginator-prev {
+      color: var(--primary-txtcolor);
+
+      :not(.p-disabled):not(.p-highlight):hover {
+        background-color: var(--tertiary-bgcolor);
+        color: var(--menu-selected-color);
+      }
+    }
+
+    .p-paginator-next {
+      color: var(--primary-txtcolor);
+
+      :not(.p-disabled):not(.p-highlight):hover {
+        background-color: var(--tertiary-bgcolor);
+        color: var(--menu-selected-color);
+      }
+    }
+
+    .p-paginator-pages {
+      .p-paginator-page {
+        background-color: var(--primary-bgcolor);
+        border: none;
+        color: var(--primary-txtcolor);
+
+        &.p-highlight {
+          background-color: var(--tertiary-bgcolor);
+          border: none;
+          color: var(--menu-selected-color);
+        }
+
+        &:not(.p-highlight):hover {
+          background-color: var(--tertiary-bgcolor);
+          border: none;
+          color: var(--menu-selected-color);
+        }
+      }
+    }
+  }
+}

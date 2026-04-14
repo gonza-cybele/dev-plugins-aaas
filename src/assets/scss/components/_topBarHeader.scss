@@ -1,0 +1,132 @@
+@import 'breakpoints';
+
+#kioskNav {
+  // Note: margin is important bacause this element breaks out of the regular TopBar padding
+  margin: -1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.top-bar {
+  background-color: var(--header-bgcolor);
+  background-image: var(--header-bg-image);
+  background-repeat: no-repeat;
+  box-shadow: 0px -5px 15px 0px var(--shadow-color);
+  z-index: 10;
+  .tools {
+    min-width: 23rem;
+  }
+
+  .logos {
+    background: var(--desktop-logo);
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 100%;
+  }
+
+  .search {
+    flex: 2;
+
+    span {
+      max-width: 35rem;
+      width: 80%;
+    }
+  }
+
+  .new-profile-button.mob {
+    display: none;
+  }
+
+  .new-profile-button {
+    display: block;
+  }
+
+  .p-inputtext,
+  .p-dropdown,
+  .p-multiselect {
+    background-color: var(--input-bgcolor);
+    color: var(--primary-txtcolor);
+
+    &::placeholder {
+      color: var(--input-txtcolor);
+      font-size: 0.8rem;
+    }
+  }
+
+  .py-15px {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .px-90px {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+
+  .p-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--menu-selected-bgcolor);
+    color: var(--menu-selected-color);
+  }
+
+  @include respond-to('tablet-h') {
+    .tools {
+      min-width: auto;
+    }
+
+    .logos {
+      width: 15rem;
+      background: var(--mobile-logo);
+      background-size: contain;
+      background-repeat: no-repeat;
+      max-width: 20%;
+      padding-left: 0 !important;
+    }
+
+    .search {
+      margin: 0 1rem;
+    }
+
+    .addons-section {
+      display: none;
+    }
+
+    .new-profile-button.mob {
+      display: block;
+      max-width: 2.5rem;
+
+      .p-button-label {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+      }
+    }
+
+    .new-profile-button {
+      display: none;
+    }
+  }
+
+  @include respond-to('mobile') {
+    > div:first-child {
+      flex-grow: unset !important;
+      min-width: 100dvw;
+    }
+
+    .search {
+      margin: 0;
+      width: auto;
+    }
+
+    .logos {
+      width: auto;
+      max-width: 2.5rem;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.p-input-icon-left > i:first-of-type {
+  color: var(--input-txtcolor);
+  margin-top: -0.6rem;
+}

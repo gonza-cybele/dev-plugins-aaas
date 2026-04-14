@@ -1,0 +1,52 @@
+{
+  "common": {
+    "signIn": "Sign In",
+    "delete": "Confirm",
+    "remove": "Remove",
+    "edit": "Edit",
+    "start": "Start",
+    "stop": "Stop",
+    "starting": "Starting",
+    "stopping": "Stopping",
+    "loading": "Loading",
+    "yes": "Yes",
+    "no": "No",
+    "error": "Error",
+    "success": "Success",
+    "failed": "Failed",
+    "allRightsReserved": "All Rights Reserved © 2010-2025 by"
+  },
+  "userMenu": {
+    "title": "Account",
+    "systemLogout": "Log out"
+  },
+  "clientList": {
+    "on": "Active",
+    "off": "Inactive",
+    "loading": "Loading",
+    "addClient": "Add Client",
+    "noInstancesFound": "No Client Instances found"
+  },
+  "deployDialog": {
+    "title": "Add Client",
+    "name": "Name",
+    "email": "E-Mail",
+    "serialNumber": "Serial Number",
+    "deploy": "Deploy",
+    "cancel": "Cancel",
+    "actionSent": "Action sent",
+    "actionFailed": "Action failed",
+    "failedToDeploy": "Failed to deploy",
+    "destroying": "Destroying",
+    "deploying": "Deploying",
+    "deployingToastMessage": "Deployment action sent. It may take a few seconds to start and a few minutes to complete."
+  },
+  "sendCommand": {
+    "header": "Send {action} command",
+    "headerRemove": "Remove instance | Remove instances",
+    "message": "Are you sure you want to send a {action} command to the instance [{name}]? | Are you sure you want to send a {action} command for ({count}) instances [{name}]?",
+    "messageRemove": "Are you sure you want to remove the instance [{name}]? | Are you sure you want to remove ({count}) instances [{name}]?",
+    "errorDetail": "An error occurred while sending the command. Please try again.",
+    "successDetail": "The command was sent successfully."
+  }
+}

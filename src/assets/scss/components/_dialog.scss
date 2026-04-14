@@ -1,0 +1,71 @@
+.p-dialog-mask {
+  z-index: 299; //for autozindex false
+}
+.p-dialog {
+  .p-dialog-header {
+    border-bottom: 0;
+    background: var(--dialog-bgcolor);
+    color: var(--primary-txtcolor);
+    border-color: var(--border-color);
+  }
+  .p-confirm-dialog {
+    &-icon {
+      color: var(--alert);
+    }
+  }
+  .p-dialog-footer {
+    background: var(--dialog-bgcolor);
+    color: var(--primary-txtcolor);
+    border-color: var(--border-color);
+    button {
+      width: 9rem;
+      padding: 0.7rem 0;
+    }
+    .p-confirm-dialog-reject {
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      width: 7rem;
+      &:enabled:hover {
+        border-color: var(--button-bgcolor-h);
+        background-color: var(--button-bgcolor-h);
+      }
+    }
+    .p-confirm-dialog-accept {
+      width: 7rem;
+    }
+  }
+  .p-dialog-content {
+    background: var(--dialog-bgcolor);
+    color: var(--primary-txtcolor);
+    border-color: var(--border-color);
+  }
+  &.viewLogDialog {
+    z-index: 299;
+  }
+
+  &.init-hidden {
+    display: none !important;
+  }
+}
+
+.p-confirm-popup {
+  .p-confirm-popup-footer {
+    background: var(--dialog-bgcolor);
+    color: var(--primary-txtcolor);
+    border-color: var(--border-color);
+    button {
+      padding: 1rem;
+      border-radius: 50rem;
+    }
+    .p-confirm-popup-reject {
+      background-color: transparent;
+      border-color: var(--outline-button-color);
+      color: var(--outline-button-color);
+      &:enabled:hover {
+        border-color: var(--button-bgcolor-h);
+        background-color: var(--button-bgcolor-h);
+      }
+    }
+  }
+}

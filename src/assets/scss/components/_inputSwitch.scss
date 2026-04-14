@@ -1,0 +1,77 @@
+// .p-inputswitch {
+//   width: 3rem;
+//   height: 1.5rem;
+//   .p-inputswitch-slider {
+//       background: var(--switcher-button);
+//       transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+//       border-radius: 4rem;
+//       width: 3rem;
+//       &::before{
+//           background: var(--switcher-button-before);
+//           width: .95rem;
+//           height:.95rem;
+//           left: 0.27rem;
+//           margin-top: -0.48rem;
+//           border-radius: 4rem;
+//           transition-duration: 0.15s;
+//       }
+//   }
+//   &-checked{
+//     .p-inputswitch-slider {
+//       background: var(--button-bgcolor) !important;
+
+//     }
+//     &:not(.p-disabled):hover .p-inputswitch-slider {
+//       background: var(--button-bgcolor);
+//     }
+//   }
+//   &:not(.p-disabled):hover .p-inputswitch-slider {
+//     background: var(--button-bgcolor);
+//   }
+// }
+
+.p-inputswitch {
+  width: 3rem;
+  height: 1.5rem;
+
+  /*False state*/
+  .p-inputswitch-slider {
+    background: var(--switcher-button);
+    transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+    border-radius: 4rem;
+    width: 3rem;
+
+    &::before {
+      background: var(--switcher-button-before);
+      width: 0.95rem;
+      height: 0.95rem;
+      left: 0.27rem;
+      margin-top: -0.48rem;
+      border-radius: 4rem;
+      transition-duration: 0.15s;
+    }
+  }
+
+  /*False hover*/
+  &:not(.p-disabled):hover {
+    .p-inputswitch-slider {
+      background-color: var(--switcher-button-bgcolor-h);
+    }
+  }
+
+  /*True state*/
+  &.p-inputswitch-checked {
+    .p-inputswitch-slider {
+      background: var(--switcher-button-bgcolor);
+    }
+
+    /*True state hover*/
+    &:not(.p-disabled):hover .p-inputswitch-slider {
+      background: var(--switcher-button-h);
+
+      &::before {
+        background: var(--switcher-button-before);
+      }
+    }
+  }
+}

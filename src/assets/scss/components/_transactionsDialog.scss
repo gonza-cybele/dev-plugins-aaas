@@ -1,0 +1,107 @@
+.transaction-dialog-container {
+  min-width: 280px;
+  max-width: 320px;
+  cursor: default;
+  z-index: 10;
+
+  .transaction-dialog-container.collapsing {
+    transition: all 0.3s ease, left 0.4s ease, top 0.4s ease;
+  }
+
+  .collapsed-bar {
+    background: var(--menu-bgcolor);
+    border: 1px solid var(--danger);
+    border-radius: 25px;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    user-select: none;
+  }
+
+  .collapsed-bar:hover {
+    box-shadow: 0 6px 16px rgba(220, 38, 38, 0.25);
+    transform: translateY(-2px);
+    border-color: var(--danger);
+  }
+
+  .expanded-dialog {
+    background: var(--menu-bgcolor);
+    border: 1px solid var(--danger);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(220, 38, 38, 0.12);
+    overflow: hidden;
+    animation: slideInUp 0.3s ease;
+
+    .dialogTitle {
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .dialog-header {
+    background: var(--menu-bgcolor);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--surface-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s ease;
+    user-select: none;
+  }
+
+  .dialog-content {
+    padding: 1rem;
+
+    .transaction-actions {
+      .p-button {
+        width: 9rem;
+      }
+    }
+  }
+
+  .max-w-250 {
+    max-width: 250px;
+  }
+
+  /* Button adjustments */
+  :deep(.p-button-sm) {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  :deep(.p-button-text):hover {
+    background: var(--surface-hover);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .transaction-dialog-container {
+      min-width: 260px;
+      max-width: 300px;
+    }
+
+    .collapsed-bar {
+      min-width: 180px;
+      padding: 0.625rem 0.875rem;
+    }
+
+    .dialog-content {
+      padding: 0.875rem;
+    }
+  }
+}

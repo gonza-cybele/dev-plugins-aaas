@@ -1,0 +1,159 @@
+body {
+  /* mini */
+  --breadcrumb-mini-item-max-width: 7rem;
+  --breadcrumb-mini-ellipsis-width: 2rem;
+  /* default */
+  --breadcrumb-item-max-width: 10rem;
+  --breadcrumb-ellipsis-width: 2rem;
+  --breadcrumb-right-width: 2rem;
+  --breadcrumb-padding: 1rem;
+}
+
+.p-breadcrumb {
+  background: none;
+  padding: 0;
+
+  //padding: .5rem 0 1.5rem 0;
+  .p-breadcrumb-list {
+    flex-wrap: wrap !important;
+    row-gap: 14px;
+
+    li {
+      &.p-menuitem-separator {
+        color: var(--primary-txtcolor);
+      }
+
+      .p-menuitem-link {
+        text-wrap: nowrap;
+
+        .p-menuitem-icon {
+          font-size: 1.25rem;
+          color: var(--link-color);
+        }
+
+        .p-menuitem-text {
+          color: var(--link-color);
+        }
+
+        &:focus {
+          box-shadow: none;
+          border-bottom: 1px solid var(--link-color);
+          border-radius: 0%;
+        }
+      }
+    }
+
+    li:last-child {
+      .p-menuitem-icon {
+        color: var(--primary-txtcolor);
+        font-size: 1.25rem;
+      }
+
+      .p-menuitem-text {
+        color: var(--primary-txtcolor);
+        cursor: default;
+      }
+    }
+
+    li:first-child {
+      padding-bottom: 0.1rem;
+    }
+  }
+}
+
+.breadCrumbDefault {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  .angle-separator {
+    font-size: 0.7rem;
+  }
+  &.contrast-bgcolor {
+    padding-inline: var(--breadcrumb-padding);
+  }
+  div:not(:last-of-type) {
+    .cursor-pointer {
+      &:hover {
+        color: var(--link-color);
+      }
+    }
+  }
+
+  div:last-of-type {
+    .cursor-pointer {
+      cursor: default !important;
+    }
+  }
+
+  .breadCrumbItem {
+    display: flex;
+    align-items: center;
+    max-width: var(--breadcrumb-item-max-width);
+    .cursor-pointer {
+      text-wrap: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .breadcrumbDynamicButton {
+    width: var(--breadcrumb-mini-ellipsis-width);
+    padding-right: 1rem;
+    cursor: pointer;
+  }
+}
+.kioskMode {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  padding: 0;
+  margin: 0;
+  .breadCrumbItem {
+    display: flex;
+    align-items: center;
+    max-width: var(--breadcrumb-item-max-width);
+    .cursor-pointer {
+      text-wrap: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .angle-separator {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .breadcrumbDynamicButton {
+    width: var(--breadcrumb-mini-ellipsis-width);
+    padding-right: 1rem;
+    cursor: pointer;
+  }
+}
+.breadCrumbMini {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  padding: 0;
+  margin: 0;
+  .breadCrumbItem {
+    display: flex;
+    max-width: var(--breadcrumb-mini-item-max-width);
+    .cursor-pointer {
+      text-wrap: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .breadcrumbDynamicButton {
+    width: var(--breadcrumb-mini-ellipsis-width);
+    padding-right: 1rem;
+    cursor: pointer;
+  }
+}

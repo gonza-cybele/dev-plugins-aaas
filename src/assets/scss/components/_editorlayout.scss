@@ -1,0 +1,52 @@
+.editorLayout {
+  &.search-enabled {
+    .header {
+      padding-block: 1.2rem !important;
+    }
+  }
+
+  &.header-padding-wvpneditor {
+    .header {
+      padding-block: 11px !important;
+    }
+  }
+
+  .search {
+    background-color: var(--secondary-bgcolor);
+  }
+
+  .disableAccordionTabAnimation {
+    .p-toggleable-content {
+      &.p-toggleable-content-enter-active {
+        &.p-toggleable-content-enter-to {
+          transition-duration: 0ms;
+        }
+      }
+      &.p-toggleable-content-leave-active {
+        &.p-toggleable-content-leave-to {
+          transition-duration: 0ms;
+        }
+      }
+    }
+  }
+
+  .searchBarEditor {
+    color: var(--primary-txtcolor);
+  }
+}
+
+.vdi-editor-layout {
+  .header-sidepanel.py-4 {
+    max-height: 63px;
+  }
+
+  .version-header {
+    max-height: 42px;
+    min-height: 42px;
+  }
+
+  .state-label {
+    font-size: 0.85rem;
+    padding: 1px 9px !important;
+  }
+}

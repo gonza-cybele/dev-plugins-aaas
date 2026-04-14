@@ -1,0 +1,23 @@
+.navigation-toolbar {
+  background-color: var(--menu-bgcolor);
+  .p-button {
+    font-size: 1.1rem;
+  }
+  .extend-button {
+    position: absolute;
+    background-color: var(--menu-bgcolor);
+    width: 3.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    left: calc(50% - 2rem);
+    box-shadow: 1px 0px 3px var(--shadow-color);
+    color: var(--primary-txtcolor);
+  }
+  .pin {
+    float: right;
+  }
+}

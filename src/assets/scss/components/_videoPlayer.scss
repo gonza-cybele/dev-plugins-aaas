@@ -1,0 +1,232 @@
+.movieDialog {
+  width: 60vw;
+  /* height: auto; */
+  aspect-ratio: 16/9;
+  /* max-height: max-content; */
+  max-width: 1800px;
+  .movieTitle {
+    color: var(--secondary-txtcolor) !important;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .p-dialog-header {
+    padding-bottom: 0;
+  }
+
+  .videoPlayer {
+    background-color: var(--dialog-bgcolor);
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    .managerArea {
+      display: flex;
+      gap: 1rem;
+      height: 90%;
+      width: 100%;
+      flex: 1;
+      /* border: 4px solid red; */
+
+      .videoArea {
+        width: 80%;
+        height: 100%;
+        transition: flex-basis 0.3s ease;
+
+        &.full-width {
+          flex-basis: 100%;
+        }
+
+        &.reduced-width {
+          flex-basis: 80%;
+        }
+      }
+
+      .sideBar {
+        width: 20%;
+        height: 100%;
+        transition: flex-basis 0.3s ease;
+        overflow-y: auto;
+
+        &.floating {
+          position: absolute;
+          right: 0;
+          background-color: #00000033;
+        }
+
+        &.collapsed {
+          flex-basis: 0;
+          visibility: hidden;
+        }
+
+        &.expanded {
+          flex-basis: 20%;
+          visibility: visible;
+        }
+
+        .list {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+
+          .selected {
+            border: 4px solid var(--primary-color) !important;
+          }
+
+          .mini-monitor {
+            border: 1px solid var(--border-color);
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            height: auto;
+            border-radius: 7px;
+            background-color: black;
+            position: relative;
+
+            .active-label {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: #fff;
+              padding: 5px 10px;
+              border-radius: 5px;
+              font-size: 20px;
+              text-align: center;
+              pointer-events: none;
+            }
+          }
+        }
+      }
+    }
+
+    .videoControllersContainer {
+      height: 60px;
+      opacity: 0;
+
+      &.visible {
+        opacity: 1;
+        transform: opacity 0.6s;
+      }
+
+      .p-button-icon {
+        color: var(--special-button);
+      }
+
+      &.relativee {
+        .p-button-icon {
+          color: var(--primary-txtcolor) !important;
+        }
+      }
+      .videoControllers {
+        color: white;
+        background-color: rgba(255, 255, 255, 0.8);
+
+        &.bg-black {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .controlsContainer {
+          .play-button {
+            font-size: 30px;
+          }
+
+          .restart-button {
+            font-size: 28px;
+          }
+        }
+
+        .right-buttons {
+          .pinn {
+            transition: transform 0.2s;
+            &.pinned {
+              transform: rotate(45deg) !important;
+            }
+          }
+        }
+
+        .videoProgressBar {
+          height: 7px;
+          background-color: white;
+          &.color-grey {
+            background-color: var(--border-color);
+          }
+          &:hover {
+            height: 9px;
+            margin-top: -2px;
+          }
+          &.dragging {
+            height: 9px;
+            margin-top: -2px;
+          }
+
+          .paintedBar {
+            background-color: #5db4e2; //primary color;
+          }
+        }
+      }
+    }
+
+    .videoContainer {
+      position: relative;
+      background-color: black;
+      border-radius: 7px;
+      overflow: hidden;
+
+      .video-player-container video {
+        position: relative !important;
+        flex: 1;
+        width: 100%;
+        aspect-ratio: 16/9;
+      }
+
+      .progressSpinner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.5s;
+
+        &.visible {
+          opacity: 0.6;
+        }
+      }
+
+      .paused-video {
+        font-size: 60px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        min-width: 80px;
+        min-height: 80px;
+        max-width: 300px;
+        transition: opacity 0.5s;
+        background-color: black;
+        border-radius: 50%;
+        &:hover {
+          background-color: black;
+          cursor: auto;
+        }
+
+        &.isSelected {
+          font-size: 120px;
+          min-width: 150px;
+          min-height: 150px;
+        }
+
+        &.visible {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.filter-container {
+  //margin-block:.5rem;
+  min-height: 4rem;
+
+  .dynamic-filter-list {
+    display: flex;
+  }
+
+  .filter-item-container {
+    width: 420px;
+    display: grid;
+    padding: 0.5rem 0.8rem;
+    grid-template-columns: 40% 40% 20%;
+    gap: 0.2rem;
+    @include respond-to('mobile') {
+      width: 100% !important;
+    }
+    > div:first-child,
+    > div:nth-child(2) {
+      .p-dropdown,
+      .p-multiselect,
+      .p-inputtext {
+        width: 100%;
+      }
+    }
+    > div:last-child {
+      gap: 0.3rem;
+      display: flex;
+    }
+  }
+
+  @include respond-to('tablet-h') {
+    min-height: auto;
+
+    &.is-in-dialog {
+      display: block;
+
+      .card {
+        padding: 0;
+      }
+    }
+
+    .filter-selector-item {
+      flex-wrap: wrap;
+      border: none !important;
+      border-radius: 0.5rem;
+      padding: 0.5rem !important;
+    }
+  }
+}
+.remove-filter-icon {
+  cursor: pointer;
+  padding: 5px;
+  display: block;
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  z-index: 1;
+  color: white;
+}
+
+.split-button-left {
+  border-radius: 1rem 0 0 1rem;
+}
+.split-button-right {
+  border-radius: 0 1rem 1rem 0;
+}
+
+.separator-dynamic-filter {
+  display: none;
+  @include respond-to('tablet-h') {
+    display: block;
+  }
+}
+
+.dynamic-filter-icon {
+  display: none;
+
+  @include respond-to('tablet-h') {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.topbar-with-filters {
+  @include respond-to('tablet-h') {
+    margin-bottom: 1rem;
+  }
+}

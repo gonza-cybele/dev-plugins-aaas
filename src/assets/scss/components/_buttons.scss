@@ -1,0 +1,307 @@
+@import 'breakpoints';
+
+.p-button {
+  background: var(--button-bgcolor);
+  border-color: var(--button-bgcolor);
+  color: var(--button-txtcolor);
+  width: 9rem;
+  font-size: 0.9rem;
+  border-radius: 0.2rem;
+  border-width: 1px;
+  max-height: 2.5rem;
+
+  &.p-button-link {
+    color: var(--link-color);
+
+    &:enabled:hover {
+      color: var(--link-color-h);
+    }
+
+    &:enabled:focus {
+      color: var(--link-color-h);
+    }
+
+    &.filter {
+      color: var(--primary-txtcolor);
+    }
+
+    &.p-button-icon-only {
+      color: var(--primary-txtcolor);
+
+      &:enabled:hover {
+        background: none;
+        box-shadow: none;
+        color: var(--link-color-h);
+      }
+
+      &:enabled:focus {
+        background: none;
+        box-shadow: none;
+        color: var(--primary-txtcolor);
+      }
+
+      &.active {
+        color: var(--link-color-h);
+
+        &:enabled:hover {
+          color: var(--link-color-h);
+        }
+
+        &:enabled:focus {
+          color: var(--link-color-h);
+        }
+      }
+    }
+  }
+
+  &.p-button-danger {
+    &.p-button-outlined {
+      color: var(--danger);
+
+      &:enabled:hover {
+        background-color: var(--danger);
+        color: var(--button-txtcolor);
+      }
+    }
+  }
+
+  &:enabled:hover {
+    background: var(--button-bgcolor-h);
+    border-color: var(--button-bgcolor-h);
+    color: var(--button-txtcolor-h);
+  }
+
+  &.p-button-outlined,
+  &.p-button-outline,
+  &.p-button-secondary {
+    background-color: transparent;
+    border-color: var(--outline-button-color);
+    color: var(--outline-button-color);
+
+    &.filter-button {
+      height: 2rem;
+      border: 0px solid var(--outline-button-color) !important;
+    }
+
+    &:enabled:hover {
+      background: var(--outline-button-bgcolor-h);
+      border-color: var(--outline-button-bgcolor-h);
+      color: var(--outline-button-color-h);
+    }
+  }
+
+  &.p-button-text {
+    background-color: transparent;
+    border-color: var(--outline-button-color);
+    color: var(--primary-color-text);
+
+    &:enabled:hover {
+      background: var(--primary-color);
+      border-color: var(--outline-button-color-h);
+      color: var(--outline-button-color-h);
+    }
+  }
+
+  &.button-plus {
+    color: var(--primary-txtcolor);
+  }
+
+  &.p-button-icon-only {
+    border: none;
+  }
+
+  &.p-togglebutton {
+    &.p-highlight {
+      background: var(--button-bgcolor);
+
+      &:hover {
+        background: var(--button-bgcolor);
+      }
+    }
+  }
+}
+.p-button.p-button-danger.p-button-link.p-button-icon-only:enabled:hover {
+  color: var(--danger);
+}
+.p-checkbox .p-checkbox-box {
+  background-color: var(--input-bgcolor);
+  border: 2px solid var(--tertiary-bgcolor);
+}
+
+.top-bar {
+  .p-button-outline {
+    background-color: var(--topbar-button-bgcolor);
+    border-color: var(--topbar-button-color);
+    color: var(--topbar-button-color);
+
+    &:enabled:hover {
+      background: var(--special-button);
+      border-color: var(--special-button);
+      color: var(--button-bgcolor-h);
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.p-radiobutton {
+  .p-radiobutton-box {
+    &:not(.p-disabled).p-focus {
+      border-color: var(--button-bgcolor);
+    }
+
+    &.p-highlight {
+      border-color: var(--button-bgcolor);
+      background: var(--button-bgcolor);
+    }
+  }
+
+  &.mbl-radio {
+    .p-radiobutton-box {
+      &.p-highlight {
+        background: none;
+        outline: none;
+        box-shadow: none;
+
+        .p-radiobutton-icon {
+          background: var(--link-color);
+          width: 12px;
+          height: 12px;
+        }
+
+        &:hover {
+          background: none;
+        }
+      }
+    }
+  }
+}
+
+.pin,
+.full-screen {
+  background-color: transparent;
+  color: var(--primary-txtcolor);
+  &:enabled:hover {
+    color: var(--menu-selected-color) !important;
+    background-color: var(--menu-selected-bgcolor) !important;
+  }
+
+  &.pinned,
+  &.active {
+    background-color: var(--menu-selected-bgcolor);
+    color: var(--menu-selected-color) !important;
+
+    &:enabled:hover {
+      background-color: transparent !important;
+      color: var(--menu-selected-color) !important;
+    }
+
+    &:focus {
+      background-color: var(--menu-selected-bgcolor) !important;
+      color: var(--menu-selected-color) !important;
+      box-shadow: 0 0 0px 3px var(--link-color-h) !important;
+    }
+  }
+}
+
+.p-selectbutton {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  padding: 1rem;
+  justify-content: center;
+
+  .p-button {
+    background: var(--primary-color);
+    border-top: none;
+    border-bottom: none;
+    color: var(--button-txtcolor-h);
+    border-radius: 5rem;
+    margin-left: -20px;
+    padding-inline: 2rem;
+    min-width: 10rem;
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:not(.p-disabled):not(.p-highlight) {
+      color: var(--primary-txtcolor);
+      background-color: var(--primary-bgcolor);
+      z-index: 1;
+
+      &:hover {
+        color: var(--button-txtcolor-h);
+        border: none;
+        background-color: var(--button-bgcolor-h);
+      }
+    }
+
+    &.p-highlight {
+      background: var(--button-bgcolor);
+      border: none;
+      color: var(--button-txtcolor-h);
+      z-index: 2;
+      border-radius: 5rem;
+      width: auto;
+
+      span {
+        font-weight: bold;
+      }
+
+      &:hover {
+        background: var(--button-bgcolor);
+        border: none;
+        color: var(--button-txtcolor-h);
+      }
+    }
+  }
+
+  &.fit-content {
+    .p-button {
+      width: fit-content;
+      padding-inline: 1rem;
+    }
+  }
+}
+
+.vm-overlay-panel {
+  .p-selectbutton {
+    padding: 0;
+    display: flex;
+    margin: 0;
+
+    .p-button {
+      border-radius: 0;
+      width: 50%;
+      margin: 0;
+
+      &.p-highlight {
+        border-radius: 0;
+      }
+
+      &:not(.p-highlight):not(.p-disabled) {
+        border-radius: 0;
+        width: 50%;
+      }
+    }
+  }
+}
+
+@include respond-to('tablet-h') {
+  .p-button {
+    width: 7rem;
+  }
+}

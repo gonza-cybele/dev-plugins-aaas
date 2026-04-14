@@ -1,0 +1,47 @@
+.blockui-fs {
+  /* width: 100%;
+      height: 100%;
+      background-color: #0006;
+      position: absolute;
+      top: 0;
+      left: 0; */
+  z-index: 300;
+}
+
+.side-panel {
+  width: 37rem;
+  max-width: 100%;
+  right: 0;
+  top: 0;
+  position: absolute;
+  z-index: 502;
+  //z-index: 1002;
+  background: var(--sidepanel-bgcolor);
+  span,
+  input {
+    font-size: 1rem;
+  }
+  .header-sidepanel {
+    background: var(--sidepanel-header-bgcolor);
+
+    &.clients-panel {
+      padding: 0.85rem 1.25rem;
+    }
+  }
+  .content {
+    background-color: var(--sidepanel-bgcolor);
+  }
+  .footer {
+    background-color: var(--sidepanel-bgcolor);
+    border-top: 1px solid var(--light-border-color);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  // @media screen and (max-width:900px) {
+  //      width: 100%;
+  // }
+  .p-orderlist-controls {
+    padding-left: 0;
+  }
+}

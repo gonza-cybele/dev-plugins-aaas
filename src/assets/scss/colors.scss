@@ -1,0 +1,64 @@
+@use 'sass:color';
+$colorList: (
+  thinfinity: #007dc1,
+  blue: #0030c1,
+  dark-blue: #243f6b,
+  gray: #7f7f7f,
+  white: #ffffff,
+  black: #000000,
+  red: #cb2827,
+  green: #086d40,
+  cybele: #085dac,
+  light-green: #34b44a,
+  light-blue: #54aadf,
+  purple: #32469d,
+  lilac: #aa4b9c,
+  pink: #ed2490,
+  orange: #f17c1c,
+  yellow: #f5dd08,
+);
+
+$scale: (900, 800, 700, 600, 500, 400, 300, 200, 100, 50);
+$scaleValues: (-90%, -68%, -46%, -24%, 0%, 18%, 36%, 54%, 72%, 90%);
+$scaleValuesOp: (-80%, -50%, -30%, -20%, 0%, 20%, 40%, 60%, 82%, 90%);
+
+:root {
+  @each $colorName, $colorValue in $colorList {
+    @for $i from 1 through 10 {
+      $key: #{$colorName}-#{nth($scale, $i)};
+      --#{$key}: #{scale-color(map-get($colorList, $colorName), $lightness: nth($scaleValues, $i))};
+      --op-#{$key}: #{scale-color(
+          map-get($colorList, $colorName),
+          $saturation: -30%,
+          $lightness: nth($scaleValuesOp, $i)
+        )};
+    }
+  }
+}
+
+$newPalette: (
+  thinfinity: #007dc1,
+  blue-cybele: #085dac,
+  orange-cybele: #faa928,
+  red-cybele: #f3371a,
+  grey: #7f7f7f,
+  blue-violet: #8878ed,
+  purple: #a32c9f,
+  pink: #ec49a0,
+  green: #76b825,
+  green2: #30c341,
+  yellow: #f5dd08,
+  white: #ffffff,
+  blue: #0d3886,
+  water-green: #3dcca1,
+  black: #000000,
+);
+$scaleValues2: (-78.5%, -58%, -36.4%, -15.5%, 0%, 22.7%, 48.53%, 67.7%, 85%, 95%);
+:root {
+  @each $colorName, $colorValue in $newPalette {
+    @for $i from 1 through 10 {
+      $key: #{$colorName}-#{nth($scale, $i)};
+      --new-#{$key}: #{scale-color(map-get($newPalette, $colorName), $lightness: nth($scaleValues2, $i))};
+    }
+  }
+}

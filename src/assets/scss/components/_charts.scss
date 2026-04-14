@@ -1,0 +1,18 @@
+/* MONITORING */
+text.apexcharts-text.apexcharts-datalabel-label,
+text.apexcharts-text.apexcharts-datalabel-value,
+text.p-knob-text {
+  fill: var(--primary-txtcolor);
+}
+
+.monitoring-dashboard-grid {
+  svg.apexcharts-svg {
+    overflow: visible;
+  }
+  .vue-apexcharts {
+    margin: 0 3rem;
+    tspan {
+      fill: var(--primary-txtcolor);
+    }
+  }
+}

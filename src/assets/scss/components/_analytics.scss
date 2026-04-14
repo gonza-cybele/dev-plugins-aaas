@@ -1,0 +1,46 @@
+.grafs {
+  background-color: var(--graf-bgcolor);
+  border: 1px solid var(--border-color);
+  .p-chart {
+    canvas {
+      display: initial !important;
+    }
+  }
+}
+.p-button {
+  &.p-button-danger {
+    &.kill-btn {
+      &:enabled:hover,
+      &:enabled:focus {
+        background: var(--surface-200);
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.analytics-pie-chart {
+  .p-chart {
+    @include respond-to('laptop') {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    @include respond-to('mobile') {
+      max-width: 100%;
+    }
+  }
+}
+
+.analytics-bar-chart {
+  .p-chart {
+    @include respond-to('laptop') {
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    @include respond-to('mobile') {
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.p-tag {
+  background-color: var(--button-bgcolor);
+  color: var(--button-txtcolor) !important;
+  margin-right: 5px;
+}
+
+.p-tag {
+  background-color: var(--prod);
+  color: var(--heading-color);
+  margin-right: 5px;
+}
+
+.s-tag {
+  background-color: var(--stage);
+  color: var(--heading-color);
+  margin-right: 5px;
+}
+
+.t-tag {
+  background-color: var(--test);
+  color: var(--heading-color);
+  margin-right: 5px;
+}
+
+.v-production {
+  border: 1px solid var(--prod);
+  border-radius: 1rem;
+  color: var(--prod);
+}
+
+.v-testing {
+  border: 1px solid var(--test);
+  border-radius: 1rem;
+  color: var(--test);
+}
+
+.v-staging {
+  border: 1px solid var(--stage);
+  border-radius: 1rem;
+  color: var(--stage);
+}

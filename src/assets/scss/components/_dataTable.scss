@@ -1,0 +1,405 @@
+@import 'breakpoints';
+$border-radius: 0.5rem;
+
+.p-datatable {
+  box-shadow: 0px 4px 10px rgb(0 0 0 / 3%), 0px 0px 2px rgb(0 0 0 / 6%), 0px 2px 6px rgb(0 0 0 / 12%) !important;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  color: var(--primary-txtcolor);
+  background-color: var(--secondary-bgcolor);
+
+  .p-checkbox .p-checkbox-box {
+    border: 2px solid var(--light-border-color);
+
+    &.p-highlight {
+      background-color: var(--menu-selected-color);
+
+      &:hover {
+        background-color: var(--menu-selected-color);
+      }
+    }
+  }
+
+  .ellipsed-content {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    line-height: 2.8rem;
+
+    @include respond-to('mobile') {
+      line-height: 1rem;
+    }
+  }
+
+  .p-button {
+    max-width: 8rem;
+  }
+
+  &.p-datatable-scrollable {
+    .p-datatable-tbody {
+      background: var(--table-body-bgcolor);
+    }
+
+    .p-datatable-wrapper {
+      border-radius: 0.5rem;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+
+      .p-datatable-table {
+        .p-datatable-thead {
+          background-color: var(--table-header-bgcolor);
+          border-top: 1px solid var(--light-border-color);
+        }
+      }
+
+      &:has(.p-datatable-emptymessage) {
+        min-height: 11rem;
+      }
+    }
+  }
+
+  &-flex-scrollable .p-datatable-wrapper {
+    background-color: var(--table-body-bgcolor);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+
+  .ellipsed {
+    display: block;
+    overflow: hidden;
+    padding-right: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .p-datatable-header {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border: 0;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--table-header-bgcolor);
+    color: var(--primary-txtcolor);
+
+    > div {
+      padding: 1rem;
+      padding-left: 0;
+    }
+
+    &:has(> .headerOverLoading) {
+      z-index: 3;
+    }
+  }
+
+  .p-datatable-thead {
+    border-bottom: 0px;
+    padding: 0.1rem;
+    border: 0;
+
+    tr {
+      border-bottom: 1px solid var(--light-border-color);
+
+      th {
+        border: 0;
+        color: var(--primary-txtcolor);
+        background-color: var(--table-header-bgcolor);
+
+        .p-column-title {
+          font-weight: 600;
+        }
+
+        @include respond-to('laptop') {
+          //min-width: min-content !important;
+          //max-width: min-content !important;
+        }
+      }
+    }
+  }
+
+  &.p-datatable-hoverable-rows {
+    .p-datatable-tbody {
+      tr {
+        &:not(.p-highlight):hover {
+          background-color: var(--table-body-bgcolor-h);
+          color: var(--primary-txtcolor);
+        }
+      }
+    }
+  }
+
+  .p-datatable-tbody {
+    border-bottom: 1px solid var(--border-color);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 0.1rem;
+
+    .p-datatable-thead tr {
+      background-color: var(--table-header-bgcolor);
+    }
+
+    tr {
+      background-color: var(--table-body-bgcolor);
+      color: var(--primary-txtcolor);
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.8rem;
+
+      &.p-highlight {
+        background-color: var(--table-body-bgcolor-h);
+        color: var(--primary-txtcolor);
+
+        .p-checkbox .p-checkbox-box {
+          border: 2px solid var(--light-border-color);
+        }
+      }
+
+      &:first-child {
+        td {
+          border-top: 1px solid var(--light-border-color);
+        }
+      }
+
+      td {
+        border-top: 0;
+        border-top: 1px solid var(--light-border-color);
+        font-size: 12px;
+        height: 3.5rem;
+        line-height: 20px;
+        word-break: break-word;
+        word-wrap: break-word;
+
+        .p-row-toggler {
+          color: var(--primary-txtcolor);
+
+          &:enabled:hover {
+            color: var(--button-txtcolor-h);
+          }
+
+          &-icon {
+            font-size: 0.6rem;
+          }
+        }
+
+        &:only-child {
+          max-width: 100%;
+          overflow: visible;
+        }
+
+        .p-button {
+          &.p-button-rounded {
+            min-width: 2.357rem;
+          }
+        }
+
+        @include respond-to('laptop') {
+          text-wrap: balance !important;
+
+          // padding-top: 1.2rem !important;
+          &.p-selection-column {
+            padding-top: 1rem !important;
+          }
+        }
+
+        &.exceptDates {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .p-datatable-footer {
+    background-color: var(--secondary-bgcolor);
+    border: 0;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+
+  .p-sortable-column {
+    .p-sortable-column-icon {
+      color: var(--primary-txtcolor);
+      font-size: 0.8rem;
+      margin-left: 0.5rem !important;
+    }
+
+    &:not(.p-highlight):hover {
+      background: var(--menu-selected-bgcolor);
+      color: var(--menu-selected-color);
+
+      .p-sortable-column-icon {
+        color: var(--menu-selected-color);
+      }
+    }
+
+    &.p-highlight {
+      background: var(--menu-selected-bgcolor);
+      color: var(--menu-selected-color);
+
+      .p-sortable-column-icon {
+        color: var(--menu-selected-color);
+      }
+
+      &:hover {
+        background: var(--menu-selected-bgcolor);
+        color: var(--menu-selected-color);
+
+        .p-sortable-column-icon {
+          color: var(--menu-selected-color);
+        }
+      }
+    }
+  }
+
+  .p-datatable-emptymessage {
+    border: none !important;
+    position: absolute;
+    width: 100%;
+    border: none;
+
+    td {
+      display: block;
+      border: none !important;
+
+      &:hover {
+        background: var(--secondary-bgcolor);
+      }
+    }
+  }
+
+  .p-component-overlay {
+    background: var(--tertiary-bgcolor);
+    border-radius: $border-radius;
+  }
+
+  &.p-invalid {
+    border-color: var(--danger);
+  }
+
+  &.mappings {
+    .p-datatable-tbody {
+      tr {
+        &.p-highlight,
+        &:focus {
+          background: var(--table-body-bgcolor-h);
+        }
+      }
+    }
+  }
+
+  &.manage-instances {
+    max-height: 32rem;
+  }
+
+  &.permissionsgroups {
+    .p-datatable-thead {
+      display: none;
+
+      tr {
+        border: none !important;
+
+        th {
+          border: none !important;
+        }
+      }
+    }
+
+    .p-datatable-tbody {
+      border: none !important;
+
+      tr {
+        border: none !important;
+        outline: none !important;
+
+        td {
+          border: none !important;
+        }
+      }
+    }
+  }
+  &.agents-table {
+    .p-datatable-wrapper {
+      overflow-x: hidden;
+    }
+  }
+
+  &.client-table {
+    border-radius: 0;
+    .p-datatable-thead {
+      tr {
+        th {
+          .p-column-title {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.p-column-filter-menu {
+  margin-left: 0.3rem !important;
+}
+
+.custom-expandable {
+  .p-row-toggler {
+    width: 1rem !important;
+    height: 1rem !important;
+    margin-right: 0.5rem !important;
+  }
+
+  .p-datatable-thead tr th:first-child {
+    padding-left: 2rem !important;
+  }
+
+  .p-selectable-row td:first-child {
+    padding-left: 2rem !important;
+  }
+}
+
+/*new */
+
+.p-datatable-row-expansion {
+  border: 0;
+  > td {
+    padding-block: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 2px solid var(--border-color) !important;
+  }
+  &:hover {
+    background-color: var(--secondary-bgcolor) !important;
+  }
+  .p-datatable {
+    border: 0;
+    box-shadow: none !important;
+
+    .p-datatable-header {
+      background-color: var(--secondary-bgcolor);
+    }
+
+    .p-datatable-tbody {
+      border-bottom: 0 !important;
+      tr td {
+        border-bottom: 0 !important;
+      }
+    }
+    .p-datatable-row-expansion > td {
+      padding: 0;
+      border: 0;
+    }
+
+    .p-datatable-thead {
+      border: 0;
+
+      tr {
+        border: 0;
+
+        th {
+          border: 0;
+          background-color: var(--secondary-bgcolor);
+
+          .p-column-title {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

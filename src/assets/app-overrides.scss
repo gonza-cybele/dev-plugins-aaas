@@ -1,0 +1,28 @@
+:root {
+  //   --client-header-height: 20%;
+  //   --client-content-height: calc(100% - var(--client-header-height));
+  --aaas-footer-height: 2rem;
+  --aaas-topbar-height: 4.5rem;
+  --aaas-mobile-width: 768px;
+}
+
+.p-checkbox.p-component {
+  &.p-highlight {
+    .p-checkbox-box {
+      background-color: var(--menu-selected-color);
+      // font-weight: bold;
+    }
+  }
+  .p-checkbox-box {
+    border: 1px solid var(--light-border-color);
+    // height: 1.2rem;
+    // width: 1.2rem;
+  }
+}
+
+// AaaS-specific login page customizations
+.login__page {
+  // Add any AaaS-specific login page styling here
+  // Root login components will inherit from base styles
+  // Override specific elements as needed for AaaS branding
+}

@@ -1,0 +1,75 @@
+.dark-mode {
+  --primary-color: var(--op-thinfinity-300);
+  --dark-primary-color: var(--thinfinity-600);
+  --light-primary-color: var(--op-thinfinity-100);
+  --bg-image: none;
+  --secondary-color: var(--light-green-400);
+  --tertiary-color: var(--op-orange-400);
+
+  --primary-bgcolor: var(--op-gray-900);
+  --secondary-bgcolor: var(--black-400);
+  --tertiary-bgcolor: var(--op-gray-800);
+  --hover-bgcolor: var(--gray-700);
+  --header-bgcolor: var(--gray-900);
+  --toolbar-bgcolor: var(--black-400);
+  --transaction-toolbar: var(--gray-700);
+  --menu-bgcolor: var(--secondary-bgcolor);
+  --unread-notification: var(--tertiary-bgcolor);
+
+  --dark-mode-entity-bg: #5db4e250;
+
+  --button-bgcolor: var(--primary-color);
+  --button-txtcolor: var(--white-500);
+  --button-bgcolor-h: var(--dark-primary-color);
+  --button-txtcolor-h: var(--white-500);
+  --outline-button-color: var(--button-bgcolor);
+  --outline-button-bgcolor-h: var(--button-bgcolor-h);
+  --outline-button-color-h: var(--button-txtcolor-h);
+  --special-button: var(--white-500);
+
+  /*New heading colors*/
+  --h2-color: var(--new-grey-200);
+  --h3-color: var(--new-grey-300);
+  --h4-color: var(--new-grey-300);
+
+  /*new switcher variables*/
+  --switcher-button: var(--new-grey-600);
+  --switcher-button-bgcolor: var(--new-green-500);
+  --switcher-button-bgcolor-h: var(--new-grey-700);
+  --switcher-button-h: var(--new-green-600);
+  --switcher-button-before: var(--white-500);
+
+  --primary-txtcolor: var(--gray-200);
+  --heading-color: var(--op-thinfinity-200);
+
+  --link-color: var(--op-thinfinity-200);
+  --link-color-h: var(--light-primary-color);
+  --menu-selected-color: var(--light-primary-color);
+  --menu-selected-bgcolor: var(--op-gray-900);
+
+  --input-bgcolor: var(--op-gray-900);
+  --input-txtcolor: var(--gray-200);
+
+  --border-color: var(--gray-700);
+  --light-border-color: var(--gray-600);
+  --lighten-border-color: var(--op-gray-700);
+  --separator: var(--gray-500);
+
+  --disabled: var(--gray-500);
+  --danger: var(--op-red-300);
+
+  //Analytics
+  --dark-mode-sessions-color: var(--allowed);
+  --dark-mode-connections-color: var(--primary-color);
+  --dark-mode-border-color: var(--separator);
+  --dark-mode-grid-color: var(--hover-bgcolor);
+  --dark-mode-text-color: var(--primary-txtcolor);
+
+  --shadow-color: #000000af;
+
+  --hover2-bgcolor: var(--gray-800);
+
+  --label-transaction-background: var(--secondary-bgcolor);
+  --label-transaction-border: var(--orange-100);
+}
+// secondary bgcolor

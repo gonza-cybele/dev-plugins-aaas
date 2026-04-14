@@ -1,0 +1,75 @@
+.blue-mode {
+  --primary-color: var(--new-thinfinity-400);
+  --dark-primary-color: var(--new-thinfinity-500);
+  --light-primary-color: var(--light-blue-300);
+  --bg-image: none;
+  --secondary-color: var(--light-green-400);
+  --tertiary-color: var(--op-orange-400);
+
+  --primary-bgcolor: var(--op-dark-blue-900);
+  --secondary-bgcolor: var(--op-dark-blue-800);
+  --tertiary-bgcolor: var(--dark-blue-800);
+  --hover-bgcolor: var(--dark-blue-800);
+  --header-bgcolor: var(--op-dark-blue-800);
+  --toolbar-bgcolor: var(--op-dark-blue-700);
+  --transaction-toolbar: var(--op-dark-blue-600);
+  --menu-bgcolor: var(--secondary-bgcolor);
+  --unread-notification: var(--op-dark-blue-700);
+
+  --blue-mode-entity-bg: #5db3e23f;
+
+  --button-bgcolor: var(--primary-color);
+  --button-txtcolor: var(--white-500);
+  --button-bgcolor-h: var(--dark-primary-color);
+  --button-txtcolor-h: var(--white-500);
+  --outline-button-color: var(--button-bgcolor);
+  --outline-button-bgcolor-h: var(--button-bgcolor-h);
+  --outline-button-color-h: var(--button-txtcolor-h);
+  --special-button: var(--white-500);
+
+  /*new switcher variables*/
+  --switcher-button: var(--new-blue-cybele-700);
+  --switcher-button-bgcolor: var(--new-green-500);
+  --switcher-button-bgcolor-h: var(--new-blue-cybele-800);
+  --switcher-button-h: var(--new-green-600);
+  --switcher-button-before: var(--white-500);
+
+  /*New heading colors*/
+  --h2-color: var(--new-thinfinity-200);
+  --h3-color: var(--new-thinfinity-400);
+  --h4-color: var(--new-thinfinity-100);
+
+  --primary-txtcolor: var(--dark-blue-100);
+  --secondary-txtcolor: var(--gray-200);
+  --heading-color: var(--op-light-blue-200);
+
+  --link-color: var(--op-dark-blue-200);
+  --link-color-h: var(--op-dark-blue-100);
+  --menu-selected-color: var(--light-primary-color);
+  --menu-selected-bgcolor: var(--op-dark-blue-900);
+
+  --input-bgcolor: var(--dark-blue-800);
+  --input-txtcolor: var(--dark-blue-100);
+
+  --border-color: var(--op-dark-blue-500);
+  --light-border-color: var(--op-dark-blue-500);
+  --lighten-border-color: var(--op-dark-blue-700);
+  --separator: var(--dark-blue-800);
+
+  --disabled: var(--op-light-blue-800);
+  --danger: var(--op-orange-600);
+  --alert: var(--orange-300);
+
+  //Analytics
+  --blue-mode-sessions-color: var(--allowed);
+  --blue-mode-connections-color: var(--primary-color);
+  --blue-mode-border-color: var(--separator);
+  --blue-mode-grid-color: var(--hover-bgcolor);
+  --blue-mode-text-color: var(--primary-txtcolor);
+
+  --shadow-color: #00000050;
+  --hover2-bgcolor: var(--op-dark-blue-800);
+
+  --label-transaction-background: var(--secondary-bgcolor);
+  --label-transaction-border: var(--orange-100);
+}

@@ -1,0 +1,80 @@
+.t-preview-box {
+  width: 205px;
+  height: 125px;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.5rem;
+  row-gap: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: var(--light-primary-color);
+  .t-header {
+    background-color: var(--header-bgcolor);
+    border-radius: var(--border-radius);
+    height: 1rem;
+    box-shadow: 1px 0px 5px var(--shadow-color);
+  }
+  .t-body {
+    padding-inline: 0 !important;
+    .t-menu {
+      background-color: var(--menu-bgcolor);
+      border-radius: var(--border-radius);
+      min-height: 2rem;
+      width: 1rem;
+      justify-self: start;
+      box-shadow: 1px 0px 5px var(--shadow-color);
+    }
+    .t-content {
+      min-height: 2rem;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      box-shadow: 1px 0px 5px var(--shadow-color);
+      border-radius: var(--border-radius);
+      .t-content-toolbar {
+        background-color: var(--toolbar-bgcolor);
+        min-width: 100%;
+        height: 1rem;
+        border-top-right-radius: var(--border-radius);
+        border-top-left-radius: var(--border-radius);
+      }
+      .t-content-body {
+        background-color: var(--primary-bgcolor);
+        background-image: var(--bg-image);
+        background-size: var(--bg-size);
+        min-width: 100%;
+        height: 100%;
+        border-bottom-right-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 1rem;
+        .p-button {
+          width: 5rem;
+          padding: 0.3rem 0;
+        }
+      }
+    }
+  }
+  &.empty-theme {
+    background: none;
+    border: 1px dashed var(--text-color);
+  }
+}
+
+.theme-tour {
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: -25px;
+  h3 {
+    color: var(--heading-color);
+    font-weight: bold;
+    margin: 0;
+  }
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}

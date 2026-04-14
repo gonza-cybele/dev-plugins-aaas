@@ -1,0 +1,98 @@
+@import 'breakpoints';
+
+.p-panelmenu {
+  background-color: var(--tertiary-bgcolor);
+  overflow-x: hidden;
+  overflow-y: auto;
+  .p-panelmenu-header {
+    .p-panelmenu-header-content {
+      border-top-left-radius: var(--border-radius) !important;
+      border-bottom-left-radius: var(--border-radius) !important;
+      background-color: var(--menu-bgcolor);
+      border: none;
+      color: var(--primary-txtcolor);
+      .p-panelmenu-header-action {
+        color: var(--primary-txtcolor);
+        border-right: 4px solid transparent;
+        padding: 13px 10px 13px 19px;
+        @include respond-to(mobile) {
+          padding-left: 2rem;
+        }
+      }
+      .p-menuitem-title {
+        color: var(--primary-txtcolor);
+        font-size: var(--font-size-lg);
+        padding: 7px 0;
+        text-align: left;
+      }
+    }
+    &:not(.p-disabled) {
+      &.p-highlight {
+        .p-panelmenu-header-content {
+          border-radius: 0;
+          color: var(--menu-selected-color);
+          .p-panelmenu-header-action {
+            //background-color: var(--menu-selected-bgcolor);
+            //color:var(--menu-selected-color);
+          }
+        }
+        &:hover {
+          .p-panelmenu-header-content {
+            border-color: var(--menu-selected-color);
+          }
+        }
+      }
+    }
+    &:not(.p-highlight) {
+      &:not(.p-disabled) {
+        &:hover {
+          .p-panelmenu-header-content {
+            border: 0;
+            .p-panelmenu-header-action {
+              color: var(--menu-selected-color);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .p-panelmenu-content {
+    .p-submenu-list {
+      .p-menuitem-link {
+        border-right: 4px solid transparent;
+        padding: 10px 0 !important;
+        background-color: var(--menu-bgcolor);
+        color: var(--primary-txtcolor);
+      }
+    }
+    .p-menuitem {
+      &:not(.p-highlight) {
+        &:not(.p-disabled) {
+          &.p-focus {
+            .p-menuitem-content {
+              color: var(--primary-txtcolor);
+              background: transparent;
+            }
+          }
+        }
+      }
+      .p-menuitem-content {
+        .p-menuitem-link {
+          color: var(--primary-txtcolor);
+
+          &.router-link-active-exact {
+            color: var(--menu-selected-color);
+            background-color: var(--tertiary-bgcolor);
+            border-color: var(--menu-selected-color);
+          }
+          &:hover {
+            color: var(--menu-selected-color);
+            background-color: var(--tertiary-bgcolor);
+            border-color: var(--menu-selected-color);
+          }
+        }
+      }
+    }
+  }
+}

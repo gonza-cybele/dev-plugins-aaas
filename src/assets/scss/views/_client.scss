@@ -1,0 +1,56 @@
+.desktop-client {
+  .side-menu {
+    .side-button {
+      right: -1rem;
+      width: 1rem;
+      border-top-right-radius: 15%;
+      border-bottom-right-radius: 15%;
+    }
+
+    .menu-item {
+      .right-bar {
+        &.closable {
+          border-start-end-radius: 0.3rem;
+          border-end-end-radius: 0.3rem;
+        }
+      }
+    }
+  }
+
+  .top-bar {
+    height: fit-content;
+    > div:first-child {
+      row-gap: 20px;
+      align-self: start;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+#app:has(.desktop-client),
+.app-container:is(.desktop-client) {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+
+  .bg-primary {
+    background: var(--bg-image);
+    background-size: var(--bg-size);
+    background-position-x: center;
+    background-color: var(--primary-bgcolor) !important;
+    background-repeat: no-repeat;
+    background-blend-mode: var(--bg-blend-mode);
+  }
+
+  .bg-secondary {
+    background-color: var(--secondary-bgcolor);
+  }
+
+  .bg-tertiary {
+    background-color: var(--tertiary-bgcolor);
+  }
+
+  footer {
+    background-color: var(--tertiary-bgcolor);
+  }
+}

@@ -1,0 +1,175 @@
+@import 'breakpoints';
+.wizard {
+  width: 51rem;
+  max-width: 96dvw;
+  height: 40rem;
+  justify-content: space-between;
+  background: var(--dialog-bgcolor);
+  .p-dialog-header {
+    padding: 0.5rem;
+  }
+  .p-dialog-content {
+    flex: 1;
+    padding: 0.2rem;
+    padding-inline: 1rem;
+    .title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 2rem;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.5rem;
+      padding: 1rem 4rem;
+      padding-top: 0;
+    }
+    .p-carousel-content {
+      &:has(.p-carousel-container:only-child) {
+        align-self: center;
+        width: fit-content;
+        .p-carousel-items-container {
+          gap: 0.1rem;
+          padding: 0 5px;
+        }
+      }
+
+      .p-carousel-indicators .p-carousel-indicator button {
+        border-radius: 1rem;
+      }
+
+      .tile-picker {
+        width: 10rem;
+        height: 10rem;
+        box-shadow: 0px 4px 10px rgb(0 0 0 / 3%), 0px 0px 2px rgb(0 0 0 / 6%), 0px 2px 6px rgb(0 0 0 / 12%) !important;
+        border: 1px solid var(--border-color);
+        &:hover {
+          box-shadow: 0px 6px 12px rgb(0 0 0 / 3%), 0px 0px 6px rgb(0 0 0 / 6%), 0px 6px 12px rgb(0 0 0 / 15%) !important;
+          color: var(--outline-button-color);
+          border-color: var(--outline-button-color);
+        }
+        &.unavailable {
+          color: var(--disabled);
+          border-color: var(--disabled);
+          opacity: 0.5;
+
+          &:hover {
+            box-shadow: 0px 4px 10px rgb(0 0 0 / 3%), 0px 0px 2px rgb(0 0 0 / 6%), 0px 2px 6px rgb(0 0 0 / 12%) !important;
+            color: var(--disabled);
+            border-color: var(--disabled);
+          }
+        }
+      }
+    }
+    .p-inputtext.p-chips-multiple-container {
+      border: 0 !important;
+      padding: 0;
+      margin-bottom: 1rem;
+      row-gap: 0.5rem;
+    }
+    .col-12 {
+      padding-inline: 0;
+    }
+    .port-field {
+      max-width: 12rem;
+    }
+  }
+  .p-dialog-footer {
+    padding-left: 0;
+    margin-left: 0;
+    text-align: left;
+    display: none;
+    &:has(.p-button) {
+      display: block;
+    }
+    .msg-capsule {
+      border: none;
+      height: 100%;
+      line-height: 1.8rem;
+      font-size: 100%;
+      display: inline-block;
+      width: 100%;
+      padding: 0.5rem 2.5rem 0.5rem 4rem;
+      background-color: var(--button-bgcolor);
+      color: var(--button-txtcolor);
+      border-top-right-radius: 5rem;
+      border-bottom-right-radius: 5rem;
+    }
+  }
+  &.booking-wizard {
+    .p-dialog-content {
+      .col-12 {
+        padding-inline: 0.5rem;
+      }
+    }
+  }
+  @include respond-to('mobile') {
+    .p-dialog-content {
+      .title {
+        font-size: 1.5rem;
+      }
+      .subtitle {
+        font-size: 1rem;
+        padding-inline: 0.5rem;
+      }
+      .p-selectbutton .p-button span {
+        font-size: 80%;
+      }
+      .grid {
+        margin-inline: 0;
+      }
+      .p-datatable-header {
+        .p-input-icon-left {
+          margin-left: 1rem;
+          .p-inputtext {
+            max-width: 80%;
+          }
+        }
+      }
+    }
+    .p-dialog-footer {
+      flex-wrap: wrap;
+      .msg-capsule {
+        display: none;
+      }
+      > div div:nth-child(2) div:has(.p-button) {
+        display: flex;
+        //flex-wrap: wrap;
+        justify-content: end;
+        .p-button {
+          width: 6rem;
+        }
+      }
+    }
+    &.booking-wizard {
+      .p-dialog-content {
+        padding-inline: 0.2rem;
+      }
+    }
+  }
+
+  &.built-in-dialog {
+    .p-dialog-content {
+      overflow: hidden;
+
+      .p-datatable-flex-scrollable {
+        height: calc(100% - 60px);
+      }
+    }
+  }
+
+  &.vdi-wizard {
+    .built-in-list {
+      max-height: 23rem;
+      .p-datatable-tbody {
+        tr {
+          &.p-highlight {
+            background-color: #e6f6ff;
+          }
+        }
+      }
+    }
+  }
+}

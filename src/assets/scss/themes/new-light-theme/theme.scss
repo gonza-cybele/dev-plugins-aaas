@@ -1,0 +1,284 @@
+.new-light-mode {
+  --desktop-logo: var(--thinfinity-logo);
+
+  --primary-color: var(--new-thinfinity-400);
+  --dark-primary-color: var(--new-blue-cybele-400);
+  --secondary-color: var(--new-green-500);
+
+  /*Background colors*/
+  --primary-bgcolor: var(--new-blue-50);
+  --secondary-bgcolor: var(--new-white-500);
+  --tertiary-bgcolor: var(--gray-50);
+
+  /*Entity-items*/
+  --starred: var(--new-yellow-500);
+
+  /*Text colors*/
+  --primary-txtcolor: var(--new-grey-800);
+  --secondary-txtcolor: var(--new-grey-400);
+  --active-view: var(--new-green-500);
+  --heading-color: var(--new-grey-900);
+  /*New white text*/
+  --white-txtcolor: var(--new-white-500);
+  /*New heading colors*/
+  --h2-color: var(--new-grey-900);
+  --h3-color: var(--new-grey-900);
+  --h4-color: var(--new-grey-700);
+
+  /*Menu, headings & panels colors*/
+  --header-bgcolor: var(--new-white-500);
+  --toolbar-bgcolor: var(--new-white-500);
+  --submenu-bgcolor: var(--menu-bgcolor);
+  --menu-bgcolor: var(--new-white-500);
+  --menu-selected-color: var(--new-thinfinity-500);
+  --menu-selected-bgcolor: var(--new-blue-cybele-100);
+  --submenu-selected-bgcolor: var(--new-thinfinity-500);
+
+  --header-input-bgcolor: var(--hover-bgcolor);
+
+  --sidepanel-header-bgcolor: var(--new-blue-cybele-400);
+  --sidepanel-bgcolor: var(--secondary-bgcolor);
+
+  --hover-bgcolor: var(--new-grey-50);
+  --hover2-bgcolor: var(--new-blue-100);
+  --hover-grey-bgcolor: var(--new-grey-50);
+
+  --request-denied: var(--red-500);
+  --request-approved: var(--new-green-500);
+  --request-pending: var(--new-orange-cybele-600);
+  --request-expired: var(--gray-300);
+  --request-approvedincoming: var(--op-orange-300);
+
+  /*borders*/
+  --border-color: var(--new-grey-200);
+  --light-border-color: var(--new-blue-100);
+  --lighten-border-color: var(--border-color);
+  --dark-border-color: var(--new-grey-500);
+  --separator: var(--light-border-color);
+
+  --box-shadow: 0px 4px 10px rgb(0 0 0 / 3%), 0px 0px 2px rgb(0 0 0 / 6%), 0px 2px 6px rgb(0 0 0 / 12%);
+
+  /*buttons*/
+  --button-bgcolor: var(--new-thinfinity-400);
+  --button-bgcolor-h: var(--new-blue-cybele-400);
+
+  --outline-button-color: var(--button-bgcolor);
+  --outline-button-bgcolor-h: var(--button-bgcolor-h);
+
+  --special-button: var(--button-bgcolor-h);
+  --topbar-button-bgcolor: var(--button-bgcolor);
+  --topbar-button-color: var(--white-500);
+
+  --green-button: var(--white-txtcolor);
+  --green-button-bgcolor: var(--new-green-500);
+  --green-button-bgcolor-h: var(--new-green-400);
+
+  /*new toolbar button*/
+  --new-button-bgcolor: var(--new-blue-100);
+  --new-button-bgcolor-h: var(--new-blue-200);
+  --new-button-color: var(--new-grey-800);
+
+  /*new round button*/
+  --round-button-bgcolor: var(--new-grey-100);
+  --round-button-bgcolor-h: var(--new-blue-100);
+  --round-button-color: var(--new-grey-800);
+
+  /*new switcher variables*/
+  --switcher-button: var(--new-grey-200);
+  --switcher-button-bgcolor: var(--new-green-400);
+  --switcher-button-bgcolor-h: var(--new-grey-300);
+  --switcher-button-h: var(--new-green-500);
+  --switcher-button-before: var(--white-500);
+
+  /* new accordion variables*/
+  --accordion-bgcolor: var(--new-white-50);
+
+  /*new tab colors*/
+  --tab-bgcolor: var(--new-thinfinity-400);
+  --tab-color-h: var(--new-thinfinity-500);
+
+  /*old*/
+
+  --button-txtcolor: var(--white-500);
+  --button-txtcolor-h: var(--white-500);
+  --outline-button-color-h: var(--button-txtcolor-h);
+
+  --primary-color-400: var(--thinfinity-400);
+  --primary-color-300: var(--thinfinity-300);
+  --primary-color-200: var(--thinfinity-200);
+  --primary-color-100: var(--thinfinity-100);
+  --light-primary-color: var(--op-thinfinity-50);
+  --tertiary-color: var(--op-orange-400);
+
+  --transaction-toolbar: var(--secondary-bgcolor);
+  --dialog-bgcolor: var(--secondary-bgcolor);
+  // --light-mode-entity-bg:#5db3e216;
+  --unread-notification: var(--op-light-blue-50);
+
+  --bg-image: none;
+  --bg-size: contain;
+  --bg-blend-mode: none;
+  --header-bg-image: none;
+
+  --tertiary-txtcolor: var(--gray-400);
+  --toolbar-txtcolor: var(--primary-txtcolor);
+
+  --link-color: var(--primary-color);
+  --link-color-h: var(--op-thinfinity-300);
+
+  --input-bgcolor: var(--white-500);
+  --input-txtcolor: var(--gray-600);
+  --inputpanel-bgcolor: var(--secondary-bgcolor);
+
+  --table-header-bgcolor: var(--header-bgcolor);
+  --table-body-bgcolor: var(--secondary-bgcolor);
+  --table-body-bgcolor-h: var(--tertiary-bgcolor);
+
+  --disabled: var(--gray-300);
+  --danger: var(--red-400);
+  --alert: var(--orange-500);
+  --alert-light: var(--orange-400);
+  --alert-bgcolor: var(--new-orange-cybele-100);
+  --alert-color: var(--new-orange-cybele-700);
+  --allowed: var(--light-green-400);
+  --shadow-color: #00000000;
+  --prod: var(--light-green-300);
+  --stage: var(--yellow-400);
+  --test: var(--orange-400);
+
+  --profile-img: url('@public/avatar.png');
+
+  --footer-display: block;
+
+  // Login
+  --logo-bg-size-mode: contain;
+  --totp-image-size: 270px;
+  --header-height: 57px;
+  --login-box-width: 80%;
+  --icon-size: 1.3rem;
+  --auth-circle-size: 45px;
+
+  //Analytics
+  --light-mode-sessions-color: var(--secondary-color);
+  --light-mode-connections-color: var(--primary-color);
+  --light-mode-border-color: var(--white-500);
+  --light-mode-text-color: var(--gray-600);
+  --light-mode-grid-color: var(--gray-100);
+  --graf-bgcolor: var(--secondary-bgcolor);
+
+  //Bootstrap - light blue theme
+  --text-color: var(--primary-txtcolor);
+  --text-secondary-color: var(--secondary-txtcolor);
+  --primary-color-text: var(--primary-txtcolor);
+  --border-radius: 0.5rem;
+
+  --label-transaction-background: var(--yellow-50);
+  --label-transaction-border: var(--orange-100);
+
+  --mobile-logo: url('@public/FAVICON-128x128.svg');
+
+  /*new scss*/
+  .top-bar {
+    border-bottom: 1px solid var(--border-color);
+
+    .text-white {
+      color: var(--primary-txtcolor) !important;
+      font-size: 1.3rem !important;
+
+      &.bg-primary-900 {
+        color: white !important;
+        background-color: var(--dark-primary-color) !important;
+      }
+    }
+
+    .p-button-outline:enabled:hover {
+      color: var(--button-txtcolor-h);
+
+      .p-button-label {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .side-menu {
+    border-right: 1px solid var(--border-color);
+
+    &.shadow-3 {
+      box-shadow: none !important;
+    }
+
+    .menu-item {
+      &:hover {
+        background-color: transparent;
+      }
+
+      &.selected {
+        background-color: transparent;
+      }
+    }
+  }
+
+  /*
+  #app .app-container main:last-child {
+    border-top: 1px solid var(--border-color);
+  }
+  */
+
+  .p-datatable {
+    box-shadow: unset !important;
+  }
+
+  .p-selectbutton .p-button:not(.p-disabled):not(.p-highlight):hover {
+    background-color: var(--hover2-bgcolor);
+    color: var(--primary-txtcolor);
+  }
+
+  .profile-preview {
+    &.h-10rem {
+      height: auto !important;
+    }
+    .entity-icon {
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  #launcherHomeNav {
+    .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+      color: var(--primary-txtcolor);
+    }
+  }
+  .configuration-options-panels {
+    .panel-item {
+      cursor: pointer;
+      background: var(--secondary-bgcolor);
+      border: 1px solid var(--light-border-color);
+      border-radius: 0.5rem;
+      &:hover {
+        background-color: var(--hover-bgcolor);
+      }
+    }
+  }
+  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-content {
+    .p-menuitem-link {
+      color: var(--primary-txtcolor);
+
+      &.router-link-active-exact {
+        background-color: var(--secondary-bgcolor);
+        color: var(--menu-selected-color);
+        border-color: var(--menu-selected-color);
+      }
+      &:hover {
+        background-color: var(--secondary-bgcolor);
+        color: var(--menu-selected-color);
+      }
+    }
+  }
+  .p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled) .p-tabview-nav-link {
+    background-color: var(--hover-bgcolor);
+    border-bottom: 2px solid var(--border-color);
+    &:hover {
+      border-bottom: 2px solid var(--border-color);
+      background-color: var(--secondary-bgcolor);
+    }
+  }
+}

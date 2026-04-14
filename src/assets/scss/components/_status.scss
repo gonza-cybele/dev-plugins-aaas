@@ -1,0 +1,111 @@
+.status {
+  padding: 8px 0;
+
+  .monitoring-container & {
+    padding: 0;
+  }
+
+  display: block;
+  .pi {
+    font-size: 0.8rem;
+  }
+
+  &.on {
+    color: var(--allowed);
+  }
+
+  &-on {
+    color: var(--allowed);
+  }
+
+  &-success {
+    color: var(--allowed);
+  }
+
+  &-off {
+    color: var(--danger);
+  }
+
+  &-starting {
+    color: var(--alert);
+  }
+
+  &-started {
+    color: var(--alert);
+  }
+
+  &-disabled {
+    color: var(--disabled);
+  }
+
+  &-unknown {
+    color: var(--text-color);
+  }
+}
+
+.bordered-status {
+  &.status {
+    padding: 8px 0;
+    display: block;
+
+    .pi {
+      font-size: 0.8rem;
+    }
+
+    &-on {
+      color: var(--allowed);
+      border: 1px solid var(--allowed);
+      border-radius: 50%;
+      padding: 4px;
+    }
+
+    &-success {
+      color: var(--allowed);
+      border: 1px solid var(--allowed);
+      border-radius: 50%;
+      padding: 4px;
+    }
+
+    &-off {
+      color: var(--danger);
+      border: 1px solid var(--danger);
+      border-radius: 50%;
+      padding: 4px;
+    }
+
+    &-starting {
+      color: var(--alert);
+      border: 1px solid var(--alert);
+      border-radius: 50%;
+      padding: 4px;
+    }
+
+    &-started {
+      color: var(--alert);
+      border: 1px solid var(--alert);
+      border-radius: 50%;
+      padding: 4px;
+    }
+
+    &-disabled {
+      color: var(--disabled);
+      border: 1px solid var(--disabled);
+      border-radius: 50%;
+      padding: 4px;
+    }
+
+    &-unknown {
+      color: var(--text-color);
+      border: 1px solid var(--text-color);
+      border-radius: 50%;
+      padding: 4px;
+    }
+
+    &-pending {
+      color: var(--request-pending) !important;
+      border: 1px solid var(--request-pending);
+      border-radius: 50%;
+      padding: 6px !important;
+    }
+  }
+}

@@ -1,0 +1,267 @@
+@import 'breakpoints';
+
+.p-tabmenu {
+  border-radius: 0.4rem;
+  //padding-inline: .5rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  .p-tabmenu-nav {
+    background: transparent;
+    border-width: 0 0 1px 0;
+
+    .p-tabmenuitem {
+      .p-menuitem-link {
+        justify-content: center;
+        background-color: transparent;
+        color: var(--primary-txtcolor);
+        border: 0;
+        border-radius: 0;
+      }
+
+      &.p-highlight {
+        border-bottom: 3px solid var(--primary-color);
+
+        .p-menuitem-link {
+          background-color: var(--menu-selected-bgcolor);
+          color: var(--menu-selected-color);
+          border-bottom: 4px solid var(--menu-selected-color);
+          box-shadow: 0px 0px 5px 4px var(--shadow-color);
+          border-radius: 0;
+        }
+      }
+
+      .p-menuitem-text {
+        font-size: var(--font-size-md);
+      }
+
+      &:not(.p-highlight):not(.p-disabled):hover {
+        .p-menuitem-link {
+          background-color: var(--menu-selected-bgcolor);
+          color: var(--menu-selected-color);
+          border-bottom: 4px solid var(--menu-selected-color);
+          box-shadow: 2px 2px 5px var(--shadow-color);
+        }
+      }
+    }
+  }
+}
+
+.configuration.p-tabmenu {
+  background-color: var(--secondary-bgcolor);
+  margin-inline: 1px !important;
+  margin-bottom: -6px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+
+  .p-tabmenu-nav {
+    border-width: 0 0 1px 0;
+    display: flex;
+
+    .p-tabmenuitem {
+      flex-grow: 1;
+
+      .p-menuitem-link {
+        background-color: var(--secondary-bgcolor);
+        color: var(--primary-txtcolor);
+        padding: 1rem;
+        border: 1px solid var(--secondary-bgcolor);
+        border-bottom: 1px solid var(--light-border-color);
+      }
+
+      &.p-highlight {
+        .p-menuitem-link {
+          z-index: 10;
+          background-color: var(--toolbar-bgcolor);
+          color: var(--menu-selected-color);
+          border: 1px solid var(--light-border-color);
+          border-bottom: 0px;
+          box-shadow: 0px 0px 6px 5px var(--shadow-color);
+          border-top-left-radius: 0.5rem;
+          border-top-right-radius: 0.5rem;
+        }
+      }
+
+      &:not(.p-highlight):not(.p-disabled) {
+        .p-menuitem-link {
+          z-index: 9;
+        }
+      }
+
+      &:not(.p-highlight):not(.p-disabled):hover {
+        .p-menuitem-link {
+          z-index: 10 !important;
+          background-color: var(--menu-selected-bgcolor);
+          color: var(--menu-selected-color);
+          border-bottom: 0px;
+          box-shadow: 0px 0px 6px 3px var(--shadow-color);
+        }
+      }
+    }
+  }
+}
+
+.pending-requests {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .menu-badge {
+    background-color: var(--button-bgcolor);
+    color: var(--button-txtcolor);
+    padding: 0.2rem 0.5rem;
+    border-radius: 50rem;
+    position: absolute;
+    top: 13px;
+    left: -8px;
+    font-size: 0.65rem;
+    width: 20px;
+    height: 20px;
+    padding-top: 4px;
+  }
+}
+
+.toolbar {
+  .tabs {
+    justify-content: flex-end;
+
+    .tab-menu {
+      flex-direction: row;
+
+      .tab-menu-item {
+        &:hover {
+          background: var(--menu-selected-bgcolor);
+          color: var(--menu-selected-color) !important;
+        }
+
+        &.selected {
+          background: var(--menu-selected-bgcolor);
+          color: var(--menu-selected-color) !important;
+          border-bottom: 5px solid var(--menu-selected-color);
+        }
+
+        &.disabled {
+          color: var(--disabled);
+          opacity: 0.5;
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+
+          &:hover {
+            background: none;
+            color: var(--disabled) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.p-overlaypanel {
+  .p-overlaypanel-content {
+    .tabs {
+      justify-content: flex-end;
+      .tab-menu-item {
+        &.selected {
+          background: var(--menu-selected-bgcolor);
+          color: var(--menu-selected-color) !important;
+          border: unset;
+        }
+      }
+    }
+
+    > div:nth-child(2) .tabs {
+      flex-direction: column;
+
+      .tab-menu {
+        flex-direction: column;
+        padding-top: 0.3rem;
+
+        .tab-menu-item {
+          justify-content: space-between;
+          // padding: .5rem 0.6rem;
+
+          > i {
+            flex: 1;
+          }
+
+          > label {
+            flex: 1;
+            min-width: 7rem;
+          }
+        }
+      }
+    }
+
+    @include respond-to('tablet-v') {
+      &:has(.tabs) {
+        padding: 0.5rem;
+        .tab-menu {
+          padding: 0 !important;
+          .tab-menu-item {
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-block: 0.2rem;
+          }
+        }
+      }
+      // .export-import-buttons{
+      //     align-items: center;
+      // }
+    }
+  }
+}
+
+.p-tabview {
+  .p-tabview-panels {
+    background-color: var(--tertiary-bgcolor);
+    border: 1px solid var(--light-border-color);
+    border-radius: var(--border-radius);
+    border-top-left-radius: 0;
+    border-top: 0;
+  }
+
+  .p-tabview-nav {
+    li {
+      &.p-highlight {
+        .p-tabview-nav-link {
+          background-color: var(--tertiary-bgcolor);
+          border-color: transparent;
+          border-top: 2px solid var(--menu-selected-color);
+          color: var(--menu-selected-color);
+          border-left: 1px solid var(--light-border-color);
+          border-right: 1px solid var(--light-border-color);
+        }
+      }
+
+      .p-tabview-nav-link {
+        background-color: var(--menu-selected-bgcolor);
+        border-color: transparent;
+        border: 1px solid var(--light-border-color);
+        border-bottom: 0;
+        border-top: 2px solid var(--menu-selected-bgcolor);
+
+        &:not(.p-disabled):focus {
+          box-shadow: none !important;
+        }
+      }
+
+      &:not(.p-highlight):not(.p-disabled):hover {
+        .p-tabview-nav-link {
+          border-top: 2px solid var(--menu-selected-color);
+          color: var(--menu-selected-color);
+          background-color: var(--tertiary-bgcolor);
+        }
+      }
+    }
+  }
+
+  &.protection-tabs {
+    .p-tabview-nav {
+      li {
+        .p-tabview-nav-link {
+          border-top: 2px solid transparent;
+        }
+      }
+    }
+  }
+}

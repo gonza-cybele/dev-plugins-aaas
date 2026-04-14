@@ -1,0 +1,14 @@
+.color-picker {
+  width: 4rem;
+
+  .picker-input {
+    position: absolute;
+    bottom: 30%;
+    z-index: -10;
+    width: 0;
+    height: 0;
+    border: 0;
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
