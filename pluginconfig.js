@@ -2,5 +2,7 @@ export const PLUGIN = {
   name: 'aaas',
   enabled: true,
   label: "App as a Service",
-  type: "app"
+  type: "app",
+  target: '',
+  icon: 'tws-star'
 }; 

@@ -1,21 +1,13 @@
-import { defineConfig, loadEnv /* searchForWorkspaceRoot */ } from 'vite';
+import { defineConfig } from 'vite';
 import { defineConfigOptions } from 'C:/GitHub/dev-web-workspace/vite.config.common';
 import { fileURLToPath, URL } from 'node:url';
-// import mkcert from 'vite-plugin-mkcert';
-const { resolve } = require('path');
-const fs = require('fs');
+import { resolve } from 'node:path';
+import { rmSync, mkdirSync, existsSync, renameSync, cpSync, statSync } from 'node:fs';
+import { createReadStream } from 'node:fs';
 
 const WORKSPACE_URL = new URL('file:///C:/GitHub/dev-web-workspace/');
 const DEV_MAIN_URL = new URL('file:///C:/GitHub/dev-web-main/');
-const outDir = './dist_aaas';
-// Map aliases from workspace
-// const aliasFromWorkspace = Object.keys(defineConfigOptions.resolve.alias).reduce((acc, key) => {
-//   if (key.startsWith('#')) return acc;
-//   const pathname = key.replace('@', '');
-//   acc[key] = resolve(__dirname, "../../src" + pathname ? `/${pathname}` : '');
-//   // "@assets": fileURLToPath(new URL("../../src/assets", import.meta.url)),
-//   return acc;
-// }, {});
+const outDir = './dist';
 
 const copyRootI18nForAaaS = () => ({
   name: 'copy-root-i18n-for-aaas',
@@ -23,18 +15,18 @@ const copyRootI18nForAaaS = () => ({
   // Run in closeBundle to ensure it happens after all other build steps
   closeBundle() {
     try {
-      const srcDir = fileURLToPath(new URL('public/i18n', WORKSPACE_URL));
+      const srcDir = resolve(fileURLToPath(WORKSPACE_URL), 'public/i18n');
       const destDir = resolve(fileURLToPath(new URL('.', import.meta.url)), `${outDir}/i18n/workspace`);
 
       console.log('[copyRootI18nForAaaS] Copying from', srcDir, 'to', destDir);
 
       // Ensure destination directory exists (clean and recreate)
-      fs.rmSync(destDir, { recursive: true, force: true });
-      fs.mkdirSync(destDir, { recursive: true });
+      rmSync(destDir, { recursive: true, force: true });
+      mkdirSync(destDir, { recursive: true });
 
       // Copy recursively
-      if (fs.existsSync(srcDir)) {
-        fs.cpSync(srcDir, destDir, { recursive: true });
+      if (existsSync(srcDir)) {
+        cpSync(srcDir, destDir, { recursive: true });
         console.log('[copyRootI18nForAaaS] Successfully copied i18n files');
       } else {
         console.warn('[copyRootI18nForAaaS] Source directory not found:', srcDir);
@@ -50,13 +42,13 @@ const cleanupProdFolder = () => ({
   apply: 'build',
   closeBundle() {
     try {
-      const distRoot = resolve(__dirname, outDir);
+      const distRoot = resolve(fileURLToPath(new URL('.', import.meta.url)), outDir);
       const indexHtml = resolve(distRoot, 'index-prod.html');
       const destIndex = resolve(distRoot, 'index.html');
 
-      if (fs.existsSync(indexHtml)) {
+      if (existsSync(indexHtml)) {
         // fs.rmSync(destIndex, { force: true });
-        fs.renameSync(indexHtml, destIndex);
+        renameSync(indexHtml, destIndex);
       }
     } catch (err) {
       console.error('[cleanupProdFolder] Failed dist cleanup:', err);
@@ -75,16 +67,16 @@ export default defineConfig(({ mode }) => ({
       apply: 'serve',
       configureServer(server) {
         const mountPath = '/workspace-dev/public/i18n';
-        const localDir = fileURLToPath(new URL('public/i18n', WORKSPACE_URL));
+        const localDir = resolve(fileURLToPath(WORKSPACE_URL), 'public/i18n');
         server.middlewares.use(async (req, res, next) => {
           if (!req.url || !req.url.startsWith(mountPath)) return next();
           try {
             const rel = req.url.substring(mountPath.length).replace(/^\/+/, '');
             const filePath = resolve(localDir, rel || '');
-            if (!fs.existsSync(filePath) || fs.lstatSync(filePath).isDirectory()) return next();
+            if (!existsSync(filePath) || statSync(filePath).isDirectory()) return next();
             res.setHeader('Cache-Control', 'no-cache');
             if (filePath.endsWith('.json')) res.setHeader('Content-Type', 'application/json; charset=utf-8');
-            fs.createReadStream(filePath).pipe(res);
+            createReadStream(filePath).pipe(res);
           } catch (err) {
             console.warn('[serve-root-i18n-in-dev] failed to serve', req.url, err);
             next();
@@ -162,7 +154,7 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       ...defineConfigOptions.build.rollupOptions,
       input: {
-        mainAaaS: resolve(__dirname, './index-prod.html'),
+        mainAaaS: resolve(fileURLToPath(new URL('.', import.meta.url)), './index-prod.html'),
       },
       output: {
         assetFileNames: 'assets/[name][extname]',

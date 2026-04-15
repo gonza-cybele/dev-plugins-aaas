@@ -11,6 +11,7 @@ import { defaultQueryClientOptions } from 'workspace-lib-utils/src/TQueryClient'
 import i18n, { loadLanguagesAsync } from '@lang';
 import router from './router';
 import PluginView from './PluginView.vue';
+import './assets/app-overrides.scss';
 
 /**
  * Mounts the AaaS plugin into a host-provided DOM element.

@@ -2,10 +2,12 @@
   "name": "thinfinity-aaas",
   "version": "1.0.0",
   "description": "Thinfinity AaaS - Apps as a Service",
+  "type": "module",
   "scripts": {
+    "install-plugin": "node scripts/install-dev-plugin.js",
     "dev": "vite --config vite.config.standalone.js --port 3003",
     "build": "vite build --config vite.config.standalone.js",
-    "dev:plugin": "",
+    "dev:plugin": "vite build --config vite.config.plugin.js --watch --mode development",
     "build:plugin": "vite build --config vite.config.plugin.js"
   },
   "dependencies": {

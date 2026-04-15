@@ -18,6 +18,21 @@
     // height: 1.2rem;
     // width: 1.2rem;
   }
+  // Hide native checkbox input — required in plugin mode where the host
+  // theme may not include styles for PrimeVue v3.53+ class names
+  .p-checkbox-input {
+    appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
 }
 
 // AaaS-specific login page customizations

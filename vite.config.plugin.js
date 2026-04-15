@@ -9,20 +9,22 @@ import { fileURLToPath, URL } from 'node:url';
 import { resolve } from 'node:path';
 import { cpSync } from 'node:fs';
 import vue from '@vitejs/plugin-vue';
+import { PLUGIN } from './pluginconfig.js';
+import { sharedDepsPlugin } from 'C:/GitHub/dev-web-workspace/plugins/config.mjs';
 
 const WORKSPACE_URL = new URL('file:///C:/GitHub/dev-web-workspace/');
 const DEV_MAIN_URL = new URL('file:///C:/GitHub/dev-web-main/');
 
-const AAAS_I18N_SRC = fileURLToPath(new URL('./public/i18n', import.meta.url));
-const AAAS_DIST = fileURLToPath(new URL('dist_plugins/aaas', WORKSPACE_URL));
+const I18N_SRC = fileURLToPath(new URL('./public/i18n', import.meta.url));
+const PLUGIN_DIST = fileURLToPath(new URL(`./dist_plugin/${PLUGIN.name}`, import.meta.url));
 
 /** Copy only AaaS's own i18n to dist — root public files are available from the host at runtime */
-const copyAaaSI18n = () => ({
+const copyRepoI18n = () => ({
   name: 'copy-aaas-i18n',
   apply: 'build',
   closeBundle() {
-    const dest = resolve(AAAS_DIST, 'i18n');
-    cpSync(AAAS_I18N_SRC, dest, { recursive: true });
+    const dest = resolve(PLUGIN_DIST, 'i18n');
+    cpSync(I18N_SRC, dest, { recursive: true });
     console.log('[copy-aaas-i18n] Copied AaaS i18n to', dest);
   },
 });
@@ -35,13 +37,21 @@ export default defineConfig(({ mode }) => ({
     'import.meta.env.VITE_PLUGIN_MODE': JSON.stringify('true'),
     __INTLIFY_JIT_COMPILATION__: false, // CSP-safe: use interpreter instead of new Function()
   },
-  plugins: [
-    vue(),
-    copyAaaSI18n(),
-  ],
+  plugins: [vue(), copyRepoI18n(), sharedDepsPlugin()],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
-    dedupe: ['vue', 'pinia', 'vue-router', '@vue/devtools-api', 'primevue', 'vue-i18n', 'primeicons', '@vueuse/core', '@tanstack/vue-query', 'axios'],
+    dedupe: [
+      'vue',
+      'pinia',
+      'vue-router',
+      '@vue/devtools-api',
+      'primevue',
+      'vue-i18n',
+      'primeicons',
+      '@vueuse/core',
+      '@tanstack/vue-query',
+      'axios',
+    ],
     alias: {
       /* ROOT APP (Workspace) */
       '@': fileURLToPath(new URL('src', WORKSPACE_URL)),
@@ -63,8 +73,7 @@ export default defineConfig(({ mode }) => ({
       '@helpers': fileURLToPath(new URL('src/helpers', WORKSPACE_URL)),
       '#core': fileURLToPath(new URL('Products/ThinRDP/Web', DEV_MAIN_URL)),
       '#common': fileURLToPath(new URL('Products/Common', DEV_MAIN_URL)),
-      /* CSP-safe: use runtime-only vue-i18n (no message compiler, no new Function()) */
-      'vue-i18n': 'vue-i18n/dist/vue-i18n.runtime.esm-bundler.js',
+      /* vue-i18n: externalized — import map resolves to runtime browser build */
       'workspace-lib-utils': fileURLToPath(new URL('workspace-lib-utils', WORKSPACE_URL)),
       /* Local aliases */
       '@aaas': fileURLToPath(new URL('./src', import.meta.url)),
@@ -77,12 +86,13 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     target: 'esnext',
-    outDir: AAAS_DIST,
+    outDir: PLUGIN_DIST,
     emptyOutDir: true,
-    minify: true,
+    minify: mode === 'production',
     cssCodeSplit: false,
+    sourcemap: mode !== 'production',
     rollupOptions: {
-      input: fileURLToPath(new URL('./src/PluginBridge.js', import.meta.url)),
+      input: fileURLToPath(new URL('./src/PluginMain.js', import.meta.url)),
       output: {
         format: 'es',
         entryFileNames: 'bridge.js',

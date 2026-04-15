@@ -30,4 +30,5 @@ CLAUDE.local.*
 *.sln
 *.sw?
 
-dist_aaas/
+dist/
+dist_plugin/
