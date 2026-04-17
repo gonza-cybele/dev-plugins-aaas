@@ -35,7 +35,9 @@ export default defineConfig(({ mode }) => ({
   define: {
     ...defineConfigOptions.define,
     'import.meta.env.VITE_PLUGIN_MODE': JSON.stringify('true'),
-    __INTLIFY_JIT_COMPILATION__: false, // CSP-safe: use interpreter instead of new Function()
+    // __INTLIFY_JIT_COMPILATION__: false, // CSP-safe: use interpreter instead of new Function()
+    __INTLIFY_JIT_COMPILATION__: true, // CSP-safe: registers AST interpreter (no new Function)
+    __INTLIFY_DROP_MESSAGE_COMPILER__: false,
   },
   plugins: [vue(), copyRepoI18n(), sharedDepsPlugin()],
   resolve: {
